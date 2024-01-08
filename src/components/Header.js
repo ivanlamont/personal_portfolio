@@ -1,7 +1,7 @@
 //import React, { useEffect, useRef } from "react";
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faChessPawn, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
@@ -27,6 +27,11 @@ const socials = [
     icon: faLinkedin,
     url: "https://www.linkedin.com/in/ivan-lamont-18736a8/",
   },
+  {
+    id: 3,
+    icon: faChessPawn,
+    url: "https://www.chess.com/member/ivanlamont/",
+  },  
   {
     id: 4,
     icon: faStackOverflow,

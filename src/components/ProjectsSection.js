@@ -19,7 +19,7 @@ const projects = [
     getImageSrc: () => require("../images/machine-learning.jpg"),
   },
   {
-    title: "Mobile, Tourism & Geolocation",
+    title: "Mobile & Geolocation",
     link: "/Mobile",
     description:
       "My most successful Start-Up experience, and an area that I am still very active in, is Mobile Application Development.  Beginning in 2002 with C on the Garmin iQue 3600, I'm now a total Android junkie.",
@@ -30,7 +30,7 @@ const projects = [
     link: "/About",
     description:
       "I don't just write code!",
-    getImageSrc: () => require("../images/self_small.jpg"),
+    getImageSrc: () => require("../images/ivan_informal.jpg"),
   },
 ];
 
@@ -57,6 +57,7 @@ const ProjectsSection = () => {
             title={project.title}
             description={project.description}
             imageSrc={project.getImageSrc()}
+            target={project.link}
           />
         ))}
       </Box>
