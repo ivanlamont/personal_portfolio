@@ -1,43 +1,30 @@
 import React from "react";
+import {useState} from "react";
+import axios from 'axios';
 import FullScreenSection from "./FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 
-const projects = [
-  {
-    title: "Financial Services",
-    link: "/FinancialServices",
-    description:
-      "Most of my Financial Services work has been in Equities, Options and Fixed Income.\nI began my career with Insurance, next came Trade Execution and Order Management, then Prime Brokerage",
-    getImageSrc: () => require("../images/financial-services.jpg"),
-  },
-  {
-    title: "Artificial Intelligence",
-    link: "/ArtificialIntelligence",
-    description:
-      "Machine Learning, and Artificial Intelligence in general, has recently been the fastest growing arena for my development work. You can see what I've been up to, here.",
-    getImageSrc: () => require("../images/machine-learning.jpg"),
-  },
-  {
-    title: "Mobile & Geolocation",
-    link: "/Mobile",
-    description:
-      "My most successful Start-Up experience, and an area that I am still very active in, is Mobile Application Development.  Beginning in 2002 with C on the Garmin iQue 3600, I'm now a total Android junkie.",
-    getImageSrc: () => require("../images/gocartours.jpg"),
-  },
-  {
-    title: "About",
-    link: "/About",
-    description:
-      "I don't just write code!",
-    getImageSrc: () => require("../images/ivan_informal.jpg"),
-  },
-];
+const back_top_color = "#6795c6"
+const back_bottom_color = "#87a5d6"
+
+const projects_json = './subsections.json'
 
 const ProjectsSection = () => {
+  
+  const [projectsList, setProjectsList] = React.useState([]);
+
+  React.useEffect(() => {
+    axios
+    .get(projects_json)
+    .then((result) => setProjectsList(result.data.projects))
+    .catch(err=>console.log('hmmm=>',err))
+  },[]);
+
   return (
     <FullScreenSection
-      backgroundColor="#14532d"
+      backgroundTopColor={back_top_color}
+      backgroundBottomColor={back_bottom_color}
       isDarkBackground
       p={8}
       alignItems="flex-start"
@@ -51,12 +38,12 @@ const ProjectsSection = () => {
         gridTemplateColumns="repeat(2,minmax(0,1fr))"
         gridGap={8}
       >
-        {projects.map((project) => (
+        {projectsList && projectsList.map((project) => (
           <Card
             key={project.title}
             title={project.title}
             description={project.description}
-            imageSrc={project.getImageSrc()}
+            imageSrc={require("../images/" + project.image)}
             target={project.link}
           />
         ))}

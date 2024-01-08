@@ -18,6 +18,9 @@ import FullScreenSection from "./FullScreenSection";
 import useSubmit from "../hooks/useSubmit";
 import {useAlertContext} from "../context/alertContext";
 
+const back_top_color = "#87a5d6"
+const back_bottom_color = "#8888A8"
+
 const LandingSection = () => {
   
   const { isLoading, response, submit } = useSubmit();
@@ -30,9 +33,9 @@ const LandingSection = () => {
       onOpen(response.type, response.message);
     },
     validationSchema: Yup.object({}).shape({
-      firstName: Yup.string().required("Name is required"),
-      comment: Yup.string().required("Message is required").min(25, "Must be at least 25 characters"),
-      email: Yup.string().email().required("Email is required"),
+      firstName: Yup.string().required("Your name is required"),
+      comment: Yup.string().required("A message is required").min(30, "Must be at least 30 characters"),
+      email: Yup.string().email().required("Email address is required"),
     }),
   });
 
@@ -44,7 +47,8 @@ const LandingSection = () => {
   return (
     <FullScreenSection
       isDarkBackground
-      backgroundColor="#512DA8"
+      backgroundTopColor={back_top_color}
+      backgroundBottomColor={back_bottom_color}
       py={16}
       spacing={8}
     >
@@ -92,7 +96,7 @@ const LandingSection = () => {
                 />
                 <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>
               </FormControl>
-              <Button type="submit" colorScheme="purple" width="full" enabled={formik.isValid && !isLoading}>
+              <Button type="submit" colorScheme="purple" width="full" enabled="{formik.isValid && !isLoading}">
                 Submit
               </Button>
             </VStack>
