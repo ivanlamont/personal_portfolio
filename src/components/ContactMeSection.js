@@ -18,10 +18,7 @@ import FullScreenSection from "./FullScreenSection";
 import useSubmit from "../hooks/useSubmit";
 import {useAlertContext} from "../context/alertContext";
 
-const back_top_color = "#87a5d6"
-const back_bottom_color = "#8888A8"
-
-const LandingSection = () => {
+const ContactMeSection = (props) => {
   
   const { isLoading, response, submit } = useSubmit();
   const { onOpen } = useAlertContext();
@@ -39,7 +36,7 @@ const LandingSection = () => {
     }),
   });
 
-  const props = formik.getFieldProps().value;
+  const senderProps = formik.getFieldProps().value;
   const isNameError = (!!formik.errors.firstName && formik.touched.firstName)
   const isEmailError = (!!formik.errors.email && formik.touched.email)
   const isMessageError = (!!formik.errors.comment && formik.touched.comment)
@@ -47,8 +44,8 @@ const LandingSection = () => {
   return (
     <FullScreenSection
       isDarkBackground
-      backgroundTopColor={back_top_color}
-      backgroundBottomColor={back_bottom_color}
+      backgroundTopColor={props.colors[props.colorIndex-1]}
+      backgroundBottomColor={props.colors[props.colorIndex]}
       py={16}
       spacing={8}
     >
@@ -80,7 +77,7 @@ const LandingSection = () => {
               </FormControl>
               <FormControl>
                 <FormLabel htmlFor="type">Type of enquiry</FormLabel>
-                <Select id="type" name="type" value={props.comment} onChange={formik.handleChange}>
+                <Select id="type" name="type" value={senderProps.comment} onChange={formik.handleChange}>
                   <option value="hireMe">Freelance project proposal</option>
                   <option value="openSource">Open source consultancy session</option>
                   <option value="other">Other</option>
@@ -107,4 +104,4 @@ const LandingSection = () => {
   );
 };
 
-export default LandingSection;
+export default ContactMeSection;

@@ -1,20 +1,17 @@
 import React from "react";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import axios from 'axios';
 import FullScreenSection from "./FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 
-const back_top_color = "#6795c6"
-const back_bottom_color = "#87a5d6"
-
 const projects_json = './subsections.json'
 
-const ProjectsSection = () => {
+const ProjectsSection = (props) => {
   
-  const [projectsList, setProjectsList] = React.useState([]);
+  const [projectsList, setProjectsList] = useState([]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     axios
     .get(projects_json)
     .then((result) => setProjectsList(result.data.projects))
@@ -23,8 +20,8 @@ const ProjectsSection = () => {
 
   return (
     <FullScreenSection
-      backgroundTopColor={back_top_color}
-      backgroundBottomColor={back_bottom_color}
+      backgroundTopColor={props.colors[props.colorIndex-1]}
+      backgroundBottomColor={props.colors[props.colorIndex]}
       isDarkBackground
       p={8}
       alignItems="flex-start"
