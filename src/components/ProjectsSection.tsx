@@ -1,15 +1,22 @@
 import React from "react";
 import {useState, useEffect} from "react";
 import axios from 'axios';
-import FullScreenSection from "./FullScreenSection";
 import { Box, Heading } from "@chakra-ui/react";
 import Card from "./Card";
+import withFullScreen from "./withFullScreen";
 
 const projects_json = './subsections.json'
 
-const ProjectsSection = (props) => {
+interface Project {
+  title: string;
+  description: string;
+  image: string;
+  link: string;
+}
+
+const ProjectsSectionBox: React.FC = () => {
   
-  const [projectsList, setProjectsList] = useState([]);
+  const [projectsList, setProjectsList] = useState<Project[]>([]);
 
   useEffect(() => {
     axios
@@ -18,18 +25,10 @@ const ProjectsSection = (props) => {
     .catch(err=>console.log('hmmm=>',err))
   },[]);
 
-  return (
-    <FullScreenSection
-      backgroundTopColor={props.colors[props.colorIndex-1]}
-      backgroundBottomColor={props.colors[props.colorIndex]}
-      isDarkBackground
-      p={8}
-      alignItems="flex-start"
-      spacing={8}
-    >
-      <Heading as="h1" id="projects-section">
+  return <Box> 
+    <Heading as="h1" id="projects-section">
         Areas of Expertise
-      </Heading>
+    </Heading>
       <Box
         display="grid"
         gridTemplateColumns="repeat(2,minmax(0,1fr))"
@@ -45,8 +44,9 @@ const ProjectsSection = (props) => {
           />
         ))}
       </Box>
-    </FullScreenSection>
-  );
+  </Box>
 };
+
+const ProjectsSection = withFullScreen(ProjectsSectionBox);
 
 export default ProjectsSection;

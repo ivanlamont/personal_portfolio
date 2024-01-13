@@ -3,10 +3,8 @@ import { Flex, Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image
 
 const really_big_font = "50px"
 
-const PrimeBrokerageSection = (props) => (
+const PrimeBrokerageSection = (props: { colors: string[]; colorIndex: number; }) => (
     <FullScreenSection
-      justifyContent="center"
-      alignItems="center"
       isDarkBackground
       backgroundTopColor={props.colors[props.colorIndex-1]}
       backgroundBottomColor={props.colors[props.colorIndex]}

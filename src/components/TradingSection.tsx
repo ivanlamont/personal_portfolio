@@ -1,14 +1,8 @@
 import FullScreenSection from "./FullScreenSection";
 import { Flex, Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image } from "@chakra-ui/react";
 
-const back_top_color = "#1a57c9"
-const back_bottom_color = "#6795c9"
-const really_big_font = "50px"
-
-const TradingSection = (props) => (
+const TradingSection = (props: { colors: string[]; colorIndex: number; }) => (
     <FullScreenSection
-      justifyContent="center"
-      alignItems="center"
       isDarkBackground
       backgroundTopColor={props.colors[props.colorIndex-1]}
       backgroundBottomColor={props.colors[props.colorIndex]}

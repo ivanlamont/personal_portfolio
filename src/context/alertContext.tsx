@@ -1,13 +1,20 @@
 import {createContext, useContext, useState} from "react";
 
-const AlertContext = createContext(undefined);
+export type AlertContent = {
+  //children: React.ReactNode;
+  isOpen: boolean;
+  type: string;
+  message: string;
+  onOpen: (type: string, message: string) => void;
+  onClose: () => void;
+};
 
-export const AlertProvider = ({ children }) => {
+const AlertContext = createContext<AlertContent>({} as AlertContent);
+
+export const AlertProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, setState] = useState({
     isOpen: false,
-    // Type can be either "success" or "error"
     type: 'success',
-    // Message to be displayed, can be any string
     message: '',
   });
 

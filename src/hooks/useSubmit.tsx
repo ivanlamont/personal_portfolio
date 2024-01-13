@@ -3,11 +3,16 @@ import { SES } from '@aws-sdk/client-ses';
 
 const ses = new SES({ region: process.env.AWS_SES_REGION });
 
+type ResponseDataType = {
+  type: string,
+  message: string
+}
+
 const useSubmit = () => {
   const [isLoading, setLoading] = useState(false);
-  const [response, setResponse] = useState(null);
+  const [response, setResponse] = useState<ResponseDataType>({ type: '', message: '' });
 
-  const submit = async (url, data) => {
+  const submit = async (url: string, data: any) => {
     setLoading(true);
     const params = {
       Source: data.email,

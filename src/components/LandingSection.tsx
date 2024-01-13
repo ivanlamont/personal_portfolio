@@ -1,26 +1,17 @@
 import React from "react";
-import { Flex, Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image } from "@chakra-ui/react";
-import FullScreenSection from "./FullScreenSection";
+import {Text, Grid, GridItem, Image } from "@chakra-ui/react";
+import withFullScreen from "./withFullScreen";
 
 const bio1 = "I first got my hands on a computer back in the 20th century.  ";
 const bio_brackets = " (Let's keep a little mystery in the story - I won't tell you exactly when... but suffice it to say, it was... a while ago).";
 const bio2 = "I've been expanding my skills as a programmer ever since.  It's been a long and interesting journey so far!  I set up this site to showcase some of the things I've done, and highlight what I'm doing next.  If you're interested in me doing something for you, please do let me know, there's a contact form down below.";
 
-
 const really_big_font = "50px"
 const massive_font = "200px"
 const blurb_font = "lg"
 
-const LandingSection = (props) => (
-  <FullScreenSection
-    justifyContent="center"
-    alignItems="center"
-    isDarkBackground
-    backgroundTopColor={props.colors[props.colorIndex-1]}
-    backgroundBottomColor={props.colors[props.colorIndex]}
-  >
-
-    <Grid
+const LandingSectionGrid: React.FC = () => {
+  return <Grid
       h='530px'
       templateRows='repeat(3, 1fr)'
       templateColumns='repeat(2, 1fr)'
@@ -42,14 +33,12 @@ const LandingSection = (props) => (
       </GridItem>
       <GridItem as='u' colSpan={1} marginTop="55px" >
         <Text as='kbd' fontSize="26px">SCROLL FOR MORE</Text>        
-      </GridItem>
-      
+      </GridItem>      
     </Grid>
+};
 
-
-    {' '}
-
-  </FullScreenSection>
-);
-
+const LandingSection = withFullScreen(LandingSectionGrid);
+  
 export default LandingSection;
+
+

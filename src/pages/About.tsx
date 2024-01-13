@@ -1,4 +1,4 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { Avatar, ChakraProvider } from "@chakra-ui/react";
 import Header from ".././components/Header";
 import Footer from ".././components/Footer";
 
@@ -13,7 +13,6 @@ function About() {
               src={require("../images/self_small.jpg")}
             />
           <Footer />
-          <Alert />
         </main>
     </ChakraProvider>
   );

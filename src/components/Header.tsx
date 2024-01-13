@@ -1,17 +1,23 @@
-//import React, { useEffect, useRef } from "react";
 import * as React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChessPawn, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faChessKing, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import {
   faGithub,
   faLinkedin,
   faMedium,
   faStackOverflow,
+  faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 import { Box, HStack } from "@chakra-ui/react";
-import { icon } from "@fortawesome/fontawesome-svg-core";
+import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-const socials = [
+type Social = {
+  id: number;
+  icon: IconProp;
+  url: string;
+};
+
+const socials: Social[] = [
   {
     id: 0,
     icon: faEnvelope,
@@ -29,18 +35,19 @@ const socials = [
   },
   {
     id: 3,
-    icon: faChessPawn,
+    icon: faChessKing,
     url: "https://www.chess.com/member/ivanlamont/",
   },  
-  {
-    id: 4,
-    icon: faStackOverflow,
-    url: "https://stackoverflow.com/users/1888629/ivan-l",
-  },
+  // {
+  //   id: 4,
+  //   icon: faYoutube,
+  //   url: "https://www.youtube.com/channel/UCa358WYu6UT7h09YhxAyx6A",
+  // },  
+
 ];
 
 const Header = () => {
-  const handleClick = (anchor) => () => {
+  const handleClick = (anchor: string) => () => {
     const id = `${anchor}-section`;
     const element = document.getElementById(id);
     if (element) {
@@ -73,7 +80,7 @@ const Header = () => {
           <nav>
             <HStack spacing={10}>
               {
-                socials.map(function(s, index) {return <a key={index} href={s.url}><FontAwesomeIcon icon={s.icon} size="2x" /></a>})
+                socials.map(function(s, index) {return <a key={index} href={s.url} target="_blank"><FontAwesomeIcon icon={s.icon} size="2x" /></a>})
               }              
             </HStack>
           </nav>
