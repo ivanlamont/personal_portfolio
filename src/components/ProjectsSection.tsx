@@ -1,7 +1,7 @@
 import React from "react";
 import {useState, useEffect} from "react";
 import axios from 'axios';
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 import withFullScreen from "./withFullScreen";
 
@@ -25,25 +25,36 @@ const ProjectsSectionBox: React.FC = () => {
     .catch(err=>console.log('hmmm=>',err))
   },[]);
 
+  if (projectsList == null)
+    return <Heading>Loading...</Heading>
+
+  const rows = 1;
+  const cols = Math.ceil(projectsList.length/rows);
+
   return <Box> 
     <Heading as="h1" id="projects-section">
         Areas of Expertise
     </Heading>
-      <Box
-        display="grid"
-        gridTemplateColumns="repeat(2,minmax(0,1fr))"
-        gridGap={8}
+
+      <Grid
+        h='200px'
+        templateRows={`repeat(${rows}, 1fr)`}
+        templateColumns={`repeat(${cols}, 1fr)`}
+        gap={4}
       >
-        {projectsList && projectsList.map((project) => (
-          <Card
-            key={project.title}
-            title={project.title}
-            description={project.description}
-            imageSrc={require("../images/" + project.image)}
-            target={project.link}
-          />
+      {projectsList.map((project) => (
+          <GridItem>
+            <Card
+              key={project.title}
+              title={project.title}
+              description={project.description}
+              imageSrc={require("../images/" + project.image)}
+              target={project.link}
+            />
+          </GridItem>
         ))}
-      </Box>
+      </Grid>
+
   </Box>
 };
 

@@ -1,24 +1,16 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import Header from ".././components/Header";
+import React from "react";
+import withColorPage, { ColorPageProps } from "./ColorPage";
+import MobileHistorySection from "../components/MobileHistory";
+import MobileRecentSection from "../components/MobileRecent";
 
-import Footer from ".././components/Footer";
-import { AlertProvider } from ".././context/alertContext";
-import Alert from ".././components/Alert";
-import TradingSection from "../components/TradingSection";
-
-function Mobile() {
-  return (
-    <ChakraProvider>
-      <AlertProvider>
-        <main>
-          <Header />
-
-          <Footer />
-          <Alert />
-        </main>
-      </AlertProvider>
-    </ChakraProvider>
-  );
+const MobileContent: React.FC<ColorPageProps> = (props) => {
+    return <>
+      <MobileHistorySection  colors={props.colorSet} colorIndex={1}/>
+      <MobileRecentSection  colors={props.colorSet} colorIndex={2} />
+    </>    
 }
 
+const Mobile = withColorPage(MobileContent)
+
 export default Mobile;
+

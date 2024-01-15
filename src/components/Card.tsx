@@ -13,29 +13,24 @@ const Card = (cardInfo: CardType) => {
   return (
     <Box maxW='sm' borderRadius='lg' overflow='hidden' bg='white' boxShadow='dark lg'>
       <Link href={cardInfo.target}>
-      <VStack>
-      </VStack>      
-      <Image src={cardInfo.imageSrc}>
-      </Image>
-          <Box p='6' minHeight="180">
-          <Box display='flex' alignItems='baseline'>
-            <Text as='b' fontSize='2xl' color='black'>{cardInfo.title}</Text>
+        <VStack maxHeight="400px">
+          <Image src={cardInfo.imageSrc} fit={"contain"}></Image>
+          <Box p='3' minHeight="180">
+            <Box display='flex' alignItems='baseline'>
+              <Text as='b' fontSize='2xl' color='black'>{cardInfo.title}</Text>
+            </Box>
+            <Box display='flex' alignItems='baseline' top ='17'>
+              <Text fontSize='sm' color='black'>{cardInfo.description}</Text>
+            </Box>
+            <Box display='flex' alignItems='baseline' bottom='10'>      
+              <HStack py={4} spacing={3} alignItems="left">
+                  <Text as='b' fontSize='md' color='black' marginRight="10px">See more</Text>
+                  <FontAwesomeIcon icon={faArrowRight} size="2x" color='black' />  
+              </HStack>
+            </Box>
           </Box>
-          <Box display='flex' alignItems='baseline' top ='14'>
-            <Text fontSize='sm' color='black'>{cardInfo.description}</Text>
-          </Box>
-          <Box display='flex' alignItems='baseline' bottom='10'>      
-            <HStack
-              py={4}
-              spacing={3} 
-              alignItems="left">
-                <Text as='b' fontSize='md' color='black' marginRight="10px">See more</Text>
-                <FontAwesomeIcon icon={faArrowRight} size="2x" color='black' />  
-            </HStack>
-          </Box>
-        </Box>
+        </VStack>      
       </Link>
-
     </Box>
   );
 };

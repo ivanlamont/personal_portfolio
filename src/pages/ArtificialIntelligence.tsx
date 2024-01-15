@@ -1,23 +1,11 @@
-import { ChakraProvider } from "@chakra-ui/react";
-import Header from ".././components/Header";
+import { Heading } from "@chakra-ui/react";
+import withColorPage, { ColorPageProps } from "./ColorPage";
 
-import Footer from ".././components/Footer";
-import { AlertProvider } from ".././context/alertContext";
-import Alert from ".././components/Alert";
-
-function ArtificialIntelligence() {
-  return (
-    <ChakraProvider>
-      <AlertProvider>
-        <main>
-          <Header />
-
-          <Footer />
-          <Alert />
-        </main>
-      </AlertProvider>
-    </ChakraProvider>
-  );
+const AIContent: React.FC<ColorPageProps> = (props) => {
+  return <>
+    <Heading>Pending</Heading>
+  </>;
 }
+const ArtificialIntelligence = withColorPage(AIContent);
 
 export default ArtificialIntelligence;

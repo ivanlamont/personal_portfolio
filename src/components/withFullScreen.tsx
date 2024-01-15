@@ -14,7 +14,7 @@ interface FullScreenProps {
  * @returns null if `isVisible` is false
  */
 export default function withFullScreen<P>(WrappedComponent: React.ComponentType<P>) {
-  const FullScreenStack = (props: P & FullScreenProps) => {
+  return (props: P & FullScreenProps) => {
     if (props.isVisible === false) {
       return null
     }
@@ -32,6 +32,5 @@ export default function withFullScreen<P>(WrappedComponent: React.ComponentType<
       </Flex>
     }
   }
-  return FullScreenStack
 }
 

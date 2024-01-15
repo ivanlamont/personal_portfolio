@@ -16,13 +16,25 @@
         "title": "Mobile & Geolocation",
         "link": "/Mobile",
         "description": "My most successful Start-Up experience, and an area that I am still very active in, is Mobile Application Development.  Beginning in 2002 with C on the Garmin iQue 3600, I'm now a total Android junkie.",
-        "image": "gocartours.jpg"
+        "image": "gocar_lombard.jpg"
+    },
+    {
+        "title": "Education & Certification",
+        "link": "/Education",
+        "description": "Degrees, certifications, licenses and other qualifications I've acquired over the years.",
+        "image": "education.jpg"
+    },
+    {
+        "title": "Technologies & Platforms",
+        "link": "/Tech",
+        "description": "Coding and development platforms, languages and technologies that I've used throughout my career",
+        "image": "technology.jpg"
     },
     {
         "title": "About",
         "link": "/About",
         "description": "I don't just write code!",
-        "image": "ivan_informal.jpg"
+        "image": "ivan_landscape.jpeg"
     }
 ]
 }
