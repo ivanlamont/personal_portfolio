@@ -25,8 +25,9 @@ export default function withFullScreen<P>(WrappedComponent: React.ComponentType<
         minWidth="99vw" height="100vh" minHeight="100vh" 
         justifyContent="center" 
         bgGradient={colorGradient} color={(props.isDarkBackground ?? true) ? "white" : "black"}
+        
         >
-      <VStack height="100vh" width="70vw" justifyContent="center"  {...childProperties}>
+      <VStack height="100vh" width="70vw" justifyContent="center" overflow="hidden"  {...childProperties}>
         <WrappedComponent {...props} />
       </VStack>        
       </Flex>

@@ -19,7 +19,7 @@ const Intro: React.FC = () => (
 const Pilot: React.FC = () => (
 <Box>
     <Heading as={heading_type} size={heading_size}>Flying</Heading>
-    <Text>As a young lad growing up in Ireland, I always wanted to become a pilot.  But <Link href="aerlingus.com">Aer Lingus</Link> were never hiring, so I decided to follow my passion for computer programming instead.  When I moved to America, I spent some of my spare time learning to fly out of <Link href="https://www.oaklandairport.com/">Oakland.  So far I have earned my FAA Commercial Pilot license with an Instrument Rating.  I plan on getting my Certified Flight Instructor cert before the decade is out</Link></Text>
+    <Text>As a young lad growing up in Ireland, I always wanted to become a pilot.  But <Link href="https://aerlingus.com">Aer Lingus</Link> were never hiring, so I decided to follow my passion for computer programming instead.  When I moved to America, I spent some of my spare time learning to fly out of <Link href="https://www.oaklandairport.com/">Oakland</Link>.  So far I have earned my FAA Commercial Pilot license with an Instrument Rating.  I plan on getting my Certified Flight Instructor cert before the decade is out</Text>
 </Box>
 );
 

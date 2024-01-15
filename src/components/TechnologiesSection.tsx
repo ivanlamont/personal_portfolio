@@ -1,7 +1,5 @@
-import YouTube from "react-youtube";
 import FullScreenSection from "./FullScreenSection";
-import { Flex, Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image, Link } from "@chakra-ui/react";
-import { Avatar } from "@chakra-ui/react";
+import { Box, Heading, Text, Grid } from "@chakra-ui/react";
 
 const heading_type = "h3"
 const heading_size = "md"
@@ -20,7 +18,6 @@ const Android: React.FC = () => (
 </Box>
 );
        
-
 const TechnologiesSection = (props: { colors: string[]; colorIndex: number; }) => (
     <FullScreenSection
       isDarkBackground

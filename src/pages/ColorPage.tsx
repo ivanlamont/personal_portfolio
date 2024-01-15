@@ -1,5 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import { AlertProvider } from ".././context/alertContext";
+
 import React from "react";
 
 import Header from ".././components/Header";
@@ -13,15 +14,18 @@ export interface ColorPageProps {
 
 export default function withColorPage<P>(Component: React.ComponentType<P>) {
     return  (props: P & ColorPageProps) => {
-        return <ChakraProvider>
+        return (
+                <ChakraProvider >
                     <AlertProvider>
                         <main>
-                        <Header />
-                        <Component {...props} />
-                        <Footer />
-                        <Alert />
+                            <Header />
+                            <Component {...props} />
+                            <Footer />
+                            <Alert />
                         </main>
                     </AlertProvider>
-                </ChakraProvider>;
+                </ChakraProvider>
+                
+        );
     }
 }
