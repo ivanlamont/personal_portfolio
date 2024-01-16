@@ -5,7 +5,7 @@ import MobileRecentSection from "../components/MobileRecent";
 
 const MobileContent: React.FC<ColorPageProps> = (props) => {
     return <>
-      <MobileHistorySection  colors={props.colorSet} colorIndex={1}/>
+      <MobileHistorySection  colorSet={props.colorSet} colorIndex={1} colors={[]} />
       <MobileRecentSection  colors={props.colorSet} colorIndex={2} />
     </>    
 }

@@ -4,7 +4,7 @@ import EducationSection from "../components/EducationSection";
 
 const EducationContent: React.FC<ColorPageProps> = (props) => {
     return <>
-      <EducationSection  colors={props.colorSet} colorIndex={1}/>
+      <EducationSection colors={props.colorSet} colorIndex={props.colorIndex?? 1} {...props}/>
     </>    
 }
 
