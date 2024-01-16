@@ -55,7 +55,6 @@ const NetCoreMaturity: React.FC = () => (
   </Box>
 );
 
-
 const TradingSection = (props: { colors: string[]; colorIndex: number; }) => (
     <FullScreenSection
       isDarkBackground
@@ -69,16 +68,23 @@ const TradingSection = (props: { colors: string[]; colorIndex: number; }) => (
         templateColumns='repeat(2, 1fr)'
         gap={2}
       >
-        <Intro></Intro>
-        <OxMan></OxMan>
-        <TradeManagementApps></TradeManagementApps>
-        <Conifer />
-        <Latency />
-        <GridItem>
-          <YouTube videoId={yt_trading_latency} />
+        <GridItem colSpan={2}>
+          <Heading as={"h1"} size={"lg"}>Financial Services</Heading>
+          <Intro />
         </GridItem>
-        <Overheads />
+        <GridItem>
+          <TradeManagementApps></TradeManagementApps>
+          <Conifer />
+        </GridItem>
+        <GridItem>
+          <Latency />
+          <GridItem>
+            <YouTube videoId={yt_trading_latency} />
+          </GridItem>
+          <Overheads />
+        </GridItem>
         <NetCoreMaturity />
+        <OxMan />
       </Grid>
     </FullScreenSection>
   );

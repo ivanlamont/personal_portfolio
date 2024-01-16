@@ -19,7 +19,8 @@ const Intro: React.FC = () => (
 const Pilot: React.FC = () => (
 <Box>
     <Heading as={heading_type} size={heading_size}>Flying</Heading>
-    <Text>As a young lad growing up in Ireland, I always wanted to become a pilot.  But <Link href="https://aerlingus.com">Aer Lingus</Link> were never hiring, so I decided to follow my passion for computer programming instead.  When I moved to America, I spent some of my spare time learning to fly out of <Link href="https://www.oaklandairport.com/">Oakland</Link>.  So far I have earned my FAA Commercial Pilot license with an Instrument Rating.  I plan on getting my Certified Flight Instructor cert before the decade is out</Text>
+    <Image src={require("../images/aviation.jpg")} alt="Flying" />
+    <Text>As a young lad growing up in Ireland, I always wanted to become a pilot.  But <Link href="https://aerlingus.com" target="_blank">Aer Lingus</Link> were never hiring, so I decided to follow my passion for computer programming instead.  When I moved to America, I spent some of my spare time learning to fly out of <Link href="https://www.oaklandairport.com/" target="_blank">Oakland</Link>.  So far I have earned my FAA Commercial Pilot license with an Instrument Rating.  I plan on getting my Certified Flight Instructor cert before the decade is out</Text>
 </Box>
 );
 
@@ -31,13 +32,21 @@ const GuitarBuilder: React.FC = () => (
     );
 
 const ChessPlayer: React.FC = () => (
-    <Box>
-        <Heading as={heading_type} size={heading_size}>Chess</Heading>
-        <Text>I love Chess, I play a little every day.  I've had a rating of 1900 before, but it takes a lot of practice.  If you'd like to play me, the link to my chess.com account is in the header.</Text>
-    </Box>
-    );
+  <Box>
+      <Heading as={heading_type} size={heading_size}>Chess</Heading>
+      <Text>I love Chess, I play a little every day.  I've had a rating of 1900 before, but it takes a lot of practice.  If you'd like to play me, the link to my chess.com account is in the header.</Text>
+  </Box>
+  );
+      
+const Referee: React.FC = () => (
+  <Box>
+      <Heading as={heading_type} size={heading_size}>Refereeing</Heading>
+      <Text>I've been a <Link href="https://www.ussoccer.com/referee-program" target="_blank">licensed soccer referee</Link> since 2019.  It's an excellent way to keep fit, and if you have the required temperament, it's a great experience.  I love it - if you love football, give it a shot!</Text>
+      <Image src={require("../images/referee.jpg")} alt="Referee" />
+  </Box>
+  );
         
-
+      
 const AboutSection = (props: { colors: string[]; colorIndex: number; }) => (
     <FullScreenSection
       isDarkBackground
@@ -68,6 +77,7 @@ const AboutSection = (props: { colors: string[]; colorIndex: number; }) => (
         </GridItem>
         <GuitarBuilder></GuitarBuilder>
         <ChessPlayer />
+        <Referee />
       </Grid>
     </FullScreenSection>
   );
