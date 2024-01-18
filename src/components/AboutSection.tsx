@@ -122,9 +122,9 @@ const AboutSports: React.FC<ColorPageProps> = (props) => {
 
 const AboutSection: React.FC<ColorPageProps> = (props) => {
     return <>
-      <AboutFlying colorIndex={props.colorIndex?? 1} {...props}/>
-      <AboutMusic colorIndex={props.colorIndex?? 2} {...props}/>
-      <AboutSports colorIndex={props.colorIndex?? 3} {...props}/>
+      <AboutFlying  {...props} colorIndex={1} />
+      <AboutMusic {...props} colorIndex={2} />
+      <AboutSports  {...props} colorIndex={3} />
     </>    
 }
 
