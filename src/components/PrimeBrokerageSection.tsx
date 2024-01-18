@@ -1,5 +1,5 @@
 import YouTube from "react-youtube";
-import FullScreenSection from "./FullScreenSection";
+import FullScreenSection, { StandardGrid } from "./FullScreenSection";
 import { Flex, Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image } from "@chakra-ui/react";
 
 const yt_prime_brokerage_ops = 'bSDkoWqCGL8';
@@ -84,13 +84,7 @@ const PrimeBrokerageSection = (props: { colors: string[]; colorIndex: number; })
     backgroundTopColor={props.colors[props.colorIndex-1]}
     backgroundBottomColor={props.colors[props.colorIndex]}
   >  
-    <Grid
-      marginTop={100}
-      h='530px'
-      templateRows='repeat(3, 1fr)'
-      templateColumns='repeat(2, 1fr)'
-      gap={2}
-    >
+    <StandardGrid>
       <GridItem  colSpan={2}>    
         <Intro />
       </GridItem>
@@ -105,7 +99,7 @@ const PrimeBrokerageSection = (props: { colors: string[]; colorIndex: number; })
       <MoneyMarketCapitalActivity />
       <IntegrationWithTradingPlatforms />
       <Compliance />
-    </Grid>  
+    </StandardGrid>  
   </FullScreenSection>
 );
 

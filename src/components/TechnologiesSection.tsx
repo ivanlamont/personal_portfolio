@@ -1,4 +1,4 @@
-import FullScreenSection from "./FullScreenSection";
+import FullScreenSection, { StandardGrid } from "./FullScreenSection";
 import { Box, Heading, Text, Grid } from "@chakra-ui/react";
 
 const heading_type = "h3"
@@ -24,16 +24,10 @@ const TechnologiesSection = (props: { colors: string[]; colorIndex: number; }) =
       backgroundTopColor={props.colors[props.colorIndex-1]}
       backgroundBottomColor={props.colors[props.colorIndex]}
     >  
-      <Grid
-        marginTop={100}
-        h='530px'
-        templateRows='repeat(3, 1fr)'
-        templateColumns='repeat(2, 1fr)'
-        gap={2}
-      >
+      <StandardGrid>
         <Intro></Intro>
         <Android></Android>
-      </Grid>
+      </StandardGrid>
     </FullScreenSection>
   );
 

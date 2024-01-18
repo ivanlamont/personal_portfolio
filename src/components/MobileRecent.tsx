@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
 import withFullScreen from "./withFullScreen";
+import { StandardGrid } from "./FullScreenSection";
 
 const MobileRecentSectionBox: React.FC = () => {
   
@@ -11,13 +12,9 @@ const MobileRecentSectionBox: React.FC = () => {
         Recent Mobile Development
     </Heading>
 
-      <Grid
-        h='200px'
-        templateRows={`repeat(${rows}, 1fr)`}
-        templateColumns={`repeat(${2}, 1fr)`}
-        gap={4}
-      >
-      </Grid>
+      <StandardGrid>
+        <> </>
+      </StandardGrid>
 
   </Box>
 };

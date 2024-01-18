@@ -1,6 +1,7 @@
 import YouTube from "react-youtube";
 import FullScreenSection from "./FullScreenSection";
 import { Flex, Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image } from "@chakra-ui/react";
+import { StandardGrid } from "./FullScreenSection";
 
 const yt_trading_latency = 'XGyGISmAhik';
 const heading_type = "h3"
@@ -10,13 +11,6 @@ const Intro: React.FC = () => (
   <Box>
     <Heading as={heading_type} size={heading_size}></Heading>
     <Text>I have been working as a developer in the financial services industry since the start of my career, in Dublin, Ireland.  Most recently, I spent sixteen years at a major broker-dealer in San Francisco, primarily working with trading and prime brokerage systems.  I love building things that make everyones jobs easier.    </Text>
-  </Box>
-);
-
-const OxMan: React.FC = () => (
-  <Box>
-    <Heading as={heading_type} size={heading_size}>Options Management</Heading>
-    <Text>One of the applications I am most proud of, was an Options Expiration Management system.  I noticed a lot of account executives staying late on Fridays to handle the options that were expiring at the end of the day.  They were spending hours, manually removing the options from their accounts, and exercising or assigning any that were in the money.  I took the initiative to build them a tool that automated the process, pulling in pricing from the primary exchange that the equity was listed on, and figuring out the value of the option, and booking the result into the account.  When I first built it, I just made it a Windows desktop application, using C#.  Later, I moved it to be a web-based app using .NET Core, and I added the ability for the system to pull in assignment notices from CBOE, and process those automatically overnight.  This was a lot more complicated than it sounds – because the assignment can come in the middle of a set of exercises and assignments, and the resulting position can end up being long or short when it was on the opposite side before the assignment dropped.  I am proud to say, the system is still in production and hasn’t had any issues since it first went live.    </Text>
   </Box>
 );
 
@@ -61,18 +55,12 @@ const TradingSection = (props: { colors: string[]; colorIndex: number; }) => (
       backgroundTopColor={props.colors[props.colorIndex-1]}
       backgroundBottomColor={props.colors[props.colorIndex]}
     >  
-      <Grid
-        marginTop={100}
-        h='530px'
-        templateRows='repeat(3, 1fr)'
-        templateColumns='repeat(2, 1fr)'
-        gap={2}
-      >
+      <StandardGrid>
         <GridItem colSpan={2}>
           <Heading as={"h1"} size={"lg"}>Financial Services</Heading>
           <Intro />
         </GridItem>
-        <GridItem>
+        <GridItem rowSpan={2}>
           <TradeManagementApps></TradeManagementApps>
           <Conifer />
         </GridItem>
@@ -84,8 +72,7 @@ const TradingSection = (props: { colors: string[]; colorIndex: number; }) => (
           <Overheads />
         </GridItem>
         <NetCoreMaturity />
-        <OxMan />
-      </Grid>
+      </StandardGrid>
     </FullScreenSection>
   );
   

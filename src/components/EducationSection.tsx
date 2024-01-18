@@ -2,7 +2,7 @@ import YouTube from "react-youtube";
 import React from "react";
 import withFullScreen from "./withFullScreen";
 import { Box, Grid, GridItem, Heading, Text, Image, Link, VStack } from "@chakra-ui/react";
-import FullScreenSection from "./FullScreenSection";
+import FullScreenSection, { StandardGrid } from "./FullScreenSection";
 import { ColorPageProps } from "../pages/ColorPage";
 
 
@@ -12,13 +12,7 @@ const EducationSectionBox: React.FC<ColorPageProps> = (props) => {
     backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
     backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
   >  
-    <Grid
-        marginTop={100}
-        h='530px'
-        templateRows='repeat(3, 1fr)'
-        templateColumns='repeat(2, 1fr)'
-        gap={2}
-        >
+        <StandardGrid>
             <GridItem>
             <Heading as={"h1"} size={"lg"}>Educating Ivan</Heading>
             <Text>I received my primary degree from <Link href="https://www.tcd.ie/" target="_blank">Trinity College Dublin</Link>, in the early 1990s.  I studied <Link href="https://www.tcd.ie/scss/courses/undergraduate/computer-science/" target="_blank">Computer Science</Link>, which was a very small niche specialization at the time.  There were 30 in my class.  I considered staying on, after graduation, to get a Masters Degree, but there were too many lucrative jobs on offer, so I bade farewell to academia for the time being, and jumped into the world of financial services.
@@ -47,7 +41,7 @@ const EducationSectionBox: React.FC<ColorPageProps> = (props) => {
                         FAA Instrument Rating
                         California Notary Public</Text>        
             </GridItem>
-        </Grid>
+        </StandardGrid>
     </FullScreenSection>;
 
 };

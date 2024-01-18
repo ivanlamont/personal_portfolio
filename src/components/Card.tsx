@@ -14,7 +14,7 @@ const Card = (cardInfo: CardType) => {
   return (
     <motion.div
       whileHover={{ scale: 1.06 }}
-      transition={{ type: 'spring', stiffness: 300 }}
+      transition={{ type: 'spring', stiffness: 30 }}
     >
       <Box maxW='sm' borderRadius='lg' overflow='hidden' bg='white' boxShadow='dark lg'>
         <Link href={cardInfo.target}>
