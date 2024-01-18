@@ -2,6 +2,7 @@ import YouTube from "react-youtube";
 import FullScreenSection, { StandardGrid } from "./FullScreenSection";
 import { Flex, Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image, Link } from "@chakra-ui/react";
 import { Avatar } from "@chakra-ui/react";
+import { ColorPageProps } from "../pages/ColorPage";
 
 const yt_flying = "0SvEWnMtX-A"
 const yt_landing = "napcu2KH5EU";
@@ -11,7 +12,12 @@ const heading_size = "md"
 
 const Intro: React.FC = () => (
     <Box>
-      <Heading as={heading_type} size={heading_size}></Heading>
+        <Avatar
+              size='2xl'
+              name='Ivan J. Lamont'
+              src={require("../images/self_small.jpg")}
+            />
+      <Heading as={heading_type} size={heading_size}>Extracurricular Activities</Heading>
       <Text></Text>
     </Box>
   );
@@ -25,11 +31,26 @@ const Pilot: React.FC = () => (
 );
 
 const GuitarBuilder: React.FC = () => (
-    <Box>
-        <Heading as={heading_type} size={heading_size}>Guitar Building</Heading>
-        <Text>Rock & Roll has to come from somewhere, right?  I've made a few electric guitars, and I am in the process of making a few more.  This video shows the neck being shaped for one of the three replicas that I am making of the 1976 Gibson Explorer.  The wood is mahogany.  I plan to give one of each of these to my sons, when the time is right.</Text>
-    </Box>
-    );
+  <Box>
+      <Heading as={heading_type} size={heading_size}>Guitar Building</Heading>
+      <Text>Rock & Roll has to come from somewhere, right?  I've made a few electric guitars, and I am in the process of making a few more.  This video shows the neck being shaped for one of the three replicas that I am making of the 1976 Gibson Explorer.  The wood is mahogany.  I plan to give one of each of these to my sons, when the time is right.</Text>
+  </Box>
+);
+
+const RingZero: React.FC = () => (
+  <Box>
+      <Heading as={heading_type} size={heading_size}>Rock & Roll</Heading>
+      <Text>For a number of years, I was the lead singer and lead guitarist for Ring Zero.  It's hard to beat the thrill of playing guitar at full volume for a crowd - the adrenaline is incredible.  We played a few memorable shows, and I sometimes dream about "getting the band back together"!</Text>
+  </Box>
+);
+
+const ManchesterUnited: React.FC = () => (
+  <Box>
+      <Heading as={heading_type} size={heading_size}>Glory, Glory...</Heading>
+      <Text>Mecca for any Manchester United fan is Old Trafford.  I've been there several times, and one day I hope to bring my three sons too.  Although one of them is a Chelsea fan!  Eeeew.</Text>
+  </Box>
+);
+
 
 const ChessPlayer: React.FC = () => (
   <Box>
@@ -44,36 +65,68 @@ const Referee: React.FC = () => (
       <Text>I've been a <Link href="https://www.ussoccer.com/referee-program" target="_blank">licensed soccer referee</Link> since 2019.  It's an excellent way to keep fit, and if you have the required temperament, it's a great experience.  I love it - if you love football, give it a shot!</Text>
       <Image src={require("../images/referee.jpg")} alt="Referee" />
   </Box>
-  );
+);
         
-      
-const AboutSection = (props: { colors: string[]; colorIndex: number; }) => (
-    <FullScreenSection
-      isDarkBackground
-      backgroundTopColor={props.colors[props.colorIndex-1]}
-      backgroundBottomColor={props.colors[props.colorIndex]}
-    >  
-      <StandardGrid>
-        <Avatar
-              size='2xl'
-              name='Ivan J. Lamont'
-              src={require("../images/self_small.jpg")}
-            />
-        <Intro></Intro>
-        <Pilot></Pilot>
-        <GridItem>
-            <Text>Here's a recent flight back to OAK</Text>
-            <YouTube videoId={yt_flying} />
-        </GridItem>
-        <GridItem>
-            <Text>Landing a C-172 at Petaluma</Text>
-            <YouTube videoId={yt_landing} />
-        </GridItem>
-        <GuitarBuilder></GuitarBuilder>
-        <ChessPlayer />
-        <Referee />
-      </StandardGrid>
-    </FullScreenSection>
-  );
 
+const AboutFlying: React.FC<ColorPageProps> = (props) => {
+    return <FullScreenSection      
+      backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
+      backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
+    >  
+    <StandardGrid>
+      <GridItem colSpan={2}>
+        <Intro />
+      </GridItem>
+      <GridItem>
+        <Pilot />
+      </GridItem>
+      <GridItem>
+        <Text>Here's a recent flight back to OAK</Text>
+        <YouTube videoId={yt_flying} />
+      </GridItem>
+      <GridItem>
+        <Text>Landing a C-172 at Petaluma</Text>
+        <YouTube videoId={yt_landing} />
+      </GridItem>
+    </StandardGrid>
+  </FullScreenSection>;
+  
+}  
+
+const AboutMusic: React.FC<ColorPageProps> = (props) => {
+  return <FullScreenSection      
+    backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
+    backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
+  >  
+    <StandardGrid>
+      <RingZero />
+      <GuitarBuilder />
+    </StandardGrid>
+  </FullScreenSection>;
+
+}  
+   
+const AboutSports: React.FC<ColorPageProps> = (props) => {
+  return <FullScreenSection      
+    backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
+    backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
+  >  
+    <StandardGrid>
+      <ChessPlayer />
+      <Referee />
+      <ManchesterUnited />
+    </StandardGrid>
+  </FullScreenSection>;
+
+}  
+
+const AboutSection: React.FC<ColorPageProps> = (props) => {
+    return <>
+      <AboutFlying colorIndex={props.colorIndex?? 1} {...props}/>
+      <AboutMusic colorIndex={props.colorIndex?? 2} {...props}/>
+      <AboutSports colorIndex={props.colorIndex?? 3} {...props}/>
+    </>    
+}
+
+  
 export default AboutSection;
