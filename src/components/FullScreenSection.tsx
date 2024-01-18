@@ -3,7 +3,7 @@ import { Grid, StackProps, VStack } from "@chakra-ui/react";
 
 export type FullScreenSectionData = {
   children: React.ReactNode, 
-  isDarkBackground: boolean,
+  isDarkBackground?: boolean,
   backgroundTopColor: string, 
   backgroundBottomColor: string
 }

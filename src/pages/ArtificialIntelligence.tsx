@@ -1,22 +1,18 @@
 import { Heading, Grid, GridItem, Link, Text, Image } from "@chakra-ui/react";
 import withColorPage, { ColorPageProps } from "./ColorPage";
-import FullScreenSection from "../components/FullScreenSection";
+import FullScreenSection, { StandardGrid } from "../components/FullScreenSection";
 
-const AIContent: React.FC<ColorPageProps> = (props) => {
+const AIContentIntro: React.FC<ColorPageProps> = (props) => {
   return <FullScreenSection
-    isDarkBackground
+    
     backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
     backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
   >  
-  <Grid
-    marginTop={100}
-    h='530px'
-    templateRows='repeat(3, 1fr)'
-    templateColumns='repeat(2, 1fr)'
-    gap={2}
-  >
-    <GridItem>
+  <StandardGrid>
+    <GridItem colSpan={2}>
       <Heading as={"h1"} size={"lg"}>Artificial Intelligence</Heading>
+    </GridItem>
+    <GridItem>
       <Text>I have always wished computers were easier to use.  When I was growing up, they were very hard to use, the amount of acquired knowledge required to get started was obscene.  Think CONFIG.SYS and AUTOEXEC.  If you don’t know what I’m talking about – you’re lucky.  I knew how powerful they were, but the learning curve was so steep, it became a barrier to entry for many, many smart people.</Text>
     </GridItem>
     <GridItem>
@@ -25,14 +21,38 @@ const AIContent: React.FC<ColorPageProps> = (props) => {
     <GridItem>
         <Text>I had really enjoyed the very primitive Artificial Intelligence research that was around at the time I was in college in <Link href="https://www.tcd.ie/" target="_blank">Trinity</Link>.  Basic chat engines, like <Link href="https://en.wikipedia.org/wiki/ELIZA" target="_blank">Eliza</Link>, mostly written in LISP.  Most of us thought that the holy grail in AI research was to write something that could pass a <Link href="https://en.wikipedia.org/wiki/Turing_test">Turing test.</Link></Text>
     </GridItem>
+  </StandardGrid>
+</FullScreenSection>;
+
+}
+
+const AIContentNext: React.FC<ColorPageProps> = (props) => {
+  return <FullScreenSection
+    backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
+    backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
+  >  
+  <StandardGrid>
     <GridItem>
-        <Text>Today, my next challenge will be getting my Masters Degree in AI, through the University of Texas at Austin.  I have been diving into the broad field of AI and machine learning, I recently got certified as a Tensorflow developer.</Text>
+        <Text>Today, my next challenge will be getting my Masters Degree in AI, through the University of Texas at Austin.  </Text>
         <Image src={require("../images/UT-austin.jpg")} alt="University of Texas at Austin" />
     </GridItem>
     <GridItem>
-        <Text>The exams for this included building and training models, improving learning rates within neural networks, and so many more technical ideas.</Text>
-        <Image src={require("../images/tensorflow-cert.png")} alt="Tensorflow Developer Certification" />
+      <Text>I have been diving into the broad field of AI and machine learning, I recently got certified as a Tensorflow developer.</Text>
+      <Image src={require("../images/tensorflow-cert.png")} alt="Tensorflow Developer Certification" />
+      <Text>The exams for this included building and training models, improving learning rates within neural networks, and so many more technical ideas.</Text>
     </GridItem>
+  </StandardGrid>
+</FullScreenSection>;
+
+}
+
+const AIContentTrading: React.FC<ColorPageProps> = (props) => {
+  return <FullScreenSection
+    
+    backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
+    backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
+  >  
+  <StandardGrid>
     <GridItem>
         <Text>One area that is seeing an explosion in AI use, is of course financial services.  Algorithmic trading is coming to dominate the market.  In my opinion, one of the most important works on the subject today is a book entitled “Machine Learning for Algorithmic Trading” by Stefan Jansen.  This is a beast of a book.   There’s nothing left out.  I’m applying the lessons learnt, and it has changed my perspective on the entire field of ML4T.  Very highly recommended for anyone interested in the subject – if you have the diligence to get through it!</Text>
     </GridItem>
@@ -49,10 +69,19 @@ const AIContent: React.FC<ColorPageProps> = (props) => {
     <GridItem>
         <Text></Text>
     </GridItem>
-  </Grid>
+  </StandardGrid>
 </FullScreenSection>;
 
 }
+
+const AIContent: React.FC<ColorPageProps> = (props) => {
+  return <>
+    <AIContentIntro colorIndex={props.colorIndex?? 1} {...props}/>
+    <AIContentNext colorIndex={props.colorIndex?? 2} {...props}/>
+    <AIContentTrading colorIndex={props.colorIndex?? 3} {...props}/>
+  </>    
+}
+
 const ArtificialIntelligence = withColorPage(AIContent);
 
 export default ArtificialIntelligence;
