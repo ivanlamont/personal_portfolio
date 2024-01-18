@@ -1,6 +1,7 @@
 import YouTube from "react-youtube";
 import FullScreenSection, { StandardGrid } from "./FullScreenSection";
 import { Flex, Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image } from "@chakra-ui/react";
+import { ColorPageProps } from "../pages/ColorPage";
 
 const yt_prime_brokerage_ops = 'bSDkoWqCGL8';
 const heading_type = "h3"
@@ -47,6 +48,13 @@ const OptionsExercisesAssignments: React.FC = () => (
   </Box>
 );
 
+const OxMan: React.FC = () => (
+  <Box>
+    <Heading as={heading_type} size={heading_size}>Options Management</Heading>
+    <Text>One of the applications I am most proud of, was an Options Expiration Management system.  I noticed a lot of account executives staying late on Fridays to handle the options that were expiring at the end of the day.  They were spending hours, manually removing the options from their accounts, and exercising or assigning any that were in the money.  I took the initiative to build them a tool that automated the process, pulling in pricing from the primary exchange that the equity was listed on, and figuring out the value of the option, and booking the result into the account.  When I first built it, I just made it a Windows desktop application, using C#.  Later, I moved it to be a web-based app using .NET Core, and I added the ability for the system to pull in assignment notices from CBOE, and process those automatically overnight.  This was a lot more complicated than it sounds – because the assignment can come in the middle of a set of exercises and assignments, and the resulting position can end up being long or short when it was on the opposite side before the assignment dropped.  I am proud to say, the system is still in production and hasn’t had any issues since it first went live.    </Text>
+  </Box>
+);
+
 const SymbolChangesCorporateActionsSplits: React.FC = () => (
   <Box>
     <Heading as={heading_type} size={heading_size}>Symbol Changes, Corporate Actions and Splits</Heading>
@@ -78,11 +86,11 @@ const Compliance: React.FC = () => (
   </Box>
 );
 
-const PrimeBrokerageSection = (props: { colors: string[]; colorIndex: number; }) => (
-  <FullScreenSection
+export const PrimeBrokerageTopSection: React.FC<ColorPageProps> = (props) => {
+  return <FullScreenSection
     isDarkBackground
-    backgroundTopColor={props.colors[props.colorIndex-1]}
-    backgroundBottomColor={props.colors[props.colorIndex]}
+    backgroundTopColor={props.colorSet[(props.colorIndex??1)-1]}
+    backgroundBottomColor={props.colorSet[props.colorIndex??1]}
   >  
     <StandardGrid>
       <GridItem  colSpan={2}>    
@@ -92,18 +100,41 @@ const PrimeBrokerageSection = (props: { colors: string[]; colorIndex: number; })
       <GridItem>
         <YouTube videoId={yt_prime_brokerage_ops} />
       </GridItem>
+    </StandardGrid>  
+  </FullScreenSection>
+}
+
+export const PrimeBrokerageBusinessSection: React.FC<ColorPageProps> = (props) => {
+    return <FullScreenSection
+    isDarkBackground
+    backgroundTopColor={props.colorSet[(props.colorIndex??1)-1]}
+    backgroundBottomColor={props.colorSet[props.colorIndex??1]}
+  >  
+    <StandardGrid>
       <AccountingSystems />
       <MarginRiskCalls />
       <OptionsExercisesAssignments />
+      <OxMan />
+    </StandardGrid>  
+  </FullScreenSection>
+}
+
+export const PrimeBrokerageDetailsSection: React.FC<ColorPageProps> = (props) => {
+  return <FullScreenSection
+    isDarkBackground
+    backgroundTopColor={props.colorSet[(props.colorIndex??1)-1]}
+    backgroundBottomColor={props.colorSet[props.colorIndex??1]}
+  >  
+    <StandardGrid>
       <SymbolChangesCorporateActionsSplits />
       <MoneyMarketCapitalActivity />
       <IntegrationWithTradingPlatforms />
       <Compliance />
     </StandardGrid>  
   </FullScreenSection>
-);
+}
 
-export default PrimeBrokerageSection;
+
   
 
 

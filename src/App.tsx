@@ -9,7 +9,7 @@ import Education from './pages/Education';
 
 const colors = {
   "landing": ["#1a57c9", "#6795c9", "#a7b5d6", "#C8B8C8"],
-  "finance":  ["#53b87e", "#8adeae", "#dff5e8", "#f5faf7"],
+  "finance":  ["#53b87e", "#17a364", "#37ab77", "#6edb8f", "#31996f"],
   "ed":  ["#f5d1b8", "#b57153", "#bd8e7b", "#fcf4eb"],
   "ai":  ["#dfd2fa", "#e5dcf7", "#e7e4ed", "#f5f2fa"],
   "mobile":  ["#c20c27", "#f5909f", "#f7d7dc", "#f7d7dc"],
