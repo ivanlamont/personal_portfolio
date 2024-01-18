@@ -1,5 +1,5 @@
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Mobile from './pages/Mobile';
+import MobilePage from './pages/Mobile';
 import ArtificialIntelligence from './pages/ArtificialIntelligence';
 import FinancialServices from './pages/FinancialServices';
 import MainPage from './pages/MainPage';
@@ -25,7 +25,7 @@ function App() {
           <Route path="/FinancialServices" element={<FinancialServices colorSet={colors.finance} />}></Route>
           <Route path="/ArtificialIntelligence" element={<ArtificialIntelligence colorSet={colors.ai} />}></Route>
           <Route path="/Education" element={<Education colorSet={colors.ed} />}></Route>
-          <Route path="/Mobile" element={<Mobile colorSet={colors.mobile}  />}></Route>
+          <Route path="/Mobile" element={<MobilePage colorSet={colors.mobile}  />}></Route>
           <Route path="/Tech" element={<Technologies colorSet={colors.tech} />}></Route>
           <Route path="/About" element={<AboutPage colorSet={colors.about} />}></Route>
       </Routes>
