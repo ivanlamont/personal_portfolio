@@ -1,6 +1,6 @@
 import { ColorPageProps } from "../pages/ColorPage";
 import FullScreenSection, { StandardGrid } from "./FullScreenSection";
-import { Heading, Text, Image, Grid, GridItem  } from "@chakra-ui/react";
+import { Heading, Text, Image, Grid, GridItem, Link  } from "@chakra-ui/react";
 import withFullScreen from "./withFullScreen";
 
 const heading_type = "h3"
@@ -28,12 +28,19 @@ export type SectionProps = {
 
 const IconSection: React.FC<SingleTechBoxProps> = (props) => {
   const file = "./" + props.image;
-  
+
+  const urlLink = props.source ? (
+    <GridItem pl='1' area={'url'} bg='white' color='blue.800'>
+      <Text>See:  <Link href={props.source} isExternal color='teal.500'>{props.source}</Link></Text>
+    </GridItem>
+  ) : null;
+
+  const templateAreasFields = props.source ?`"header header" "icon main" "icon url" "icon footer"` : `"header header" "icon main" "icon footer"`;
+  const templateAreasRows = props.source ? '28px 1fr 28px 28px' : '28px 1fr 28px';
+
   return <Grid
-      templateAreas={`"header header"
-                      "nav main"
-                      "nav footer"`}
-      gridTemplateRows={'28px 1fr 30px'}
+      templateAreas={templateAreasFields}
+      gridTemplateRows={templateAreasRows} 
       gridTemplateColumns={'90px 1fr'}
       gap='1'
       border={'1px'}
@@ -41,12 +48,13 @@ const IconSection: React.FC<SingleTechBoxProps> = (props) => {
     <GridItem pl='2' bg='blue.800' area={'header'}>
       <Heading as={heading_type} size={heading_size}>{props.title}</Heading>
     </GridItem>
-    <GridItem pl='2' area={'nav'}>
+    <GridItem pl='2' area={'icon'}>
       <Image src={file} borderRadius='lg' boxSize={"80px"} />
     </GridItem>
     <GridItem pl='1' area={'main'}>
       <Text>{props.description}</Text>
     </GridItem>
+    {urlLink}
     <GridItem pl='2' bg='blue.600' area={'footer'}>
       <Text>Verdict: {props.footer}</Text>
     </GridItem>
@@ -64,7 +72,7 @@ export const TechnologiesFromFile: React.FC<ColorPageProps & SectionProps> = (pr
       <StandardGrid>
       {props.data.map((technology) => (
           <GridItem>
-            <IconSection title={technology.title} image={"./" + technology.image} description={technology.description} footer={technology.footer} />
+            <IconSection title={technology.title} image={"./" + technology.image} description={technology.description} footer={technology.footer} source={technology.source} />
           </GridItem>
         ))}
       </StandardGrid>  

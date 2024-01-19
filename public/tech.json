@@ -3,15 +3,8 @@
     {
       "title": "Python",
       "footer": "Utterly Amazing",
-      "description": "I started writing Python code at home about ten years ago. I love the language, and have used it for a variety of projects, including a web scraper, a web server, and a trading system.  It's real strength is in data processing, every AI and ML library you can think of is available for it.  No matter how much I write in Python, I always feel like I'm just scratching the surface of what it can do.",
+      "description": "I started writing Python code at home about ten years ago. I love the language, and have used it for a variety of projects, including a web scraper, a web server, and a trading system.  It's real strength is in data processing, every AI and ML library you can think of is available for it.  No matter how much I write in Python, I always feel like I'm just scratching the surface of what it can do.  Today, this is my #1 main development language",
       "image": "python.svg"
-    },
-    {
-      "title": "ReactJS",
-      "footer": "Okay, I guess",
-      "description": "I've used ReactJS since 2019.  It's powerful and I love the amazing results we can get with it.  Indeed, this website itself was built with ReactJS and TypeScript. There are a lot of developers available to support it, but still there are some unavoidable conclusions when you get used to it.  All the rules, for hooks, for side effects, etc - all these are there because at the end of the day, this is Javascript, and everything is a function. ReactJS is good, but in my opinion, Blazor is a lot better",
-      "source": "https://reactjs.org/",
-      "image": "react.png"
     },
     {
       "title": "C#",
@@ -29,6 +22,7 @@
       "title": "Java",
       "image": "java.svg",
       "description": "The original cross-platform superlanguage. I actually really like Java, even though it doesn't support null safety.  Most of my Java code is written for Android, but I really enjoy using it, especially on server apps.  It's quite elegant and succint.",
+      "source": "https://github.com/ivanlamont/TalkBack",
       "footer": "Beautiful"
     },
     {
@@ -115,6 +109,13 @@
       "footer": "Great"
     },
     {
+        "title": "ReactJS",
+        "footer": "Okay, I guess",
+        "description": "I've used ReactJS since 2019.  It's powerful and I love the amazing results we can get with it.  Indeed, this website itself was built with ReactJS and TypeScript. There are a lot of developers available to support it, but still there are some unavoidable conclusions when you get used to it.  All the rules, for hooks, for side effects, etc - all these are there because at the end of the day, this is Javascript, and everything is a function. ReactJS is good, but in my opinion, Blazor is a lot better",
+        "source": "https://github.com/ivanlamont/personal_portfolio",
+        "image": "react.png"
+    },
+    {
       "title": "Flutter",
       "image": "flutter.svg",
       "description": "The story of the development of Flutter is quite amazing, and I have built cross-plaform apps using it that are breathtaking.  Now supports five native targets!  This is what React-Native should be.",
@@ -168,13 +169,15 @@
       "title": "Android",
       "image": "android-vertical.svg",
       "description": "I've been writing Android apps since 2005.  I love it.  It's a great platform, and I've built some amazing apps with it, including the GoCar app that we got patented.  I've used Java, Kotlin and Flutter, as well as Rhomobile, to build apps on it.  The Android Development Studio Device Manager though - remains the only app I know that can reliably bring an entire Windows machine to a dead halt.  ",
+      "source": "https://github.com/ivanlamont/TalkBack",
       "footer": "The #1 best mobile platform"
     },
     {
       "title": "AWS",
       "image": "aws.svg",
       "description": "Among the big three clouds, there's fierce competition.  I've always leaned towards Microsoft, but IMHO at the moment AWS beats out Azure for usability, and on price too.  I've been AWS certified since Nov 2023",
-      "footer": "The Best Cloud"
+      "footer": "The Best Cloud",
+      "source": "https://www.credly.com/badges/396fea86-89e6-453c-9ad3-ba0389f37e84/linked_in_profile"
     },
     {
       "title": "Azure",
