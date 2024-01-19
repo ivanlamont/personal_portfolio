@@ -7,10 +7,10 @@ const heading_type = "h3"
 const heading_size = "md"
 
 const Intro: React.FC = () => (
-    <Box>
+  <GridItem colSpan={2}>
       <Heading as={heading_type} size={heading_size}>Technology Experience</Heading>
       <Text>I have used a TON of different Technologies over the course of my career so far.  If you would like to know if I have experience using something, what I did with it, and what I think of it, you've come to the right place</Text>
-    </Box>
+  </GridItem>  
   );
 
 type ImageSectionProps = {
@@ -53,35 +53,37 @@ const Python: React.FC = () => IconSection({title: "Python", imageSource: "pytho
 const CSharp: React.FC = () => IconSection({title: "C#", imageSource: "c-sharp.svg", description: ""});
 const CPP: React.FC = () => IconSection({title: "C++", imageSource: "c-plusplus.svg", description: ""});
 const Java: React.FC = () => IconSection({title: "Java", imageSource: "java.svg", description: ""});
+const Kotlin: React.FC = () => IconSection({title: "Kotlin", imageSource: "kotlin.png", description: ""});
 const DotNet: React.FC = () => IconSection({title: ".NET", imageSource: "dotnet.svg", description: ""});
 const DotNetCore: React.FC = () => IconSection({title: ".NET Core", imageSource: "dotnet.svg", description: ""});
-const ReactJS: React.FC = () => IconSection({title: "ReactJS", imageSource: "react.svg", description: "I've used ReactJS since 2019.  It's powerful and I love the amazing results we can get with it.  Indeed, this website itself was built with it."});
+const ReactJS: React.FC = () => IconSection({title: "ReactJS", imageSource: "react.png", description: "I've used ReactJS since 2019.  It's powerful and I love the amazing results we can get with it.  Indeed, this website itself was built with it."});
+const JQuery: React.FC = () => IconSection({title: "jQuery", imageSource: "jquery.png", description: ""});
 const Dart: React.FC = () => IconSection({title: "Dart", imageSource: "dart.svg", description: ""});
-const PowerShell: React.FC = () => IconSection({title: "Powershell", imageSource: "powershell.svg", description: ""});
-const Pascal: React.FC = () => IconSection({title: "Pascal", imageSource: "pascal.svg", description: ""});
-const Assembler: React.FC = () => IconSection({title: "Assembly", imageSource: "assembly.svg", description: ""});
-const BASIC: React.FC = () => IconSection({title: "BASIC", imageSource: "basic.svg", description: ""});
-const SQL: React.FC = () => IconSection({title: "SQL", imageSource: "sql.svg", description: ""});
-const Postgres: React.FC = () => IconSection({title: "PostgreSQL", imageSource: "postgres.svg", description: ""});
-const EntityFramework: React.FC = () => IconSection({title: "EntityFramework", imageSource: "entityframework.svg", description: ""});
-const Geneva: React.FC = () => IconSection({title: "Geneva", imageSource: "geneva.svg", description: ""});
+const PowerShell: React.FC = () => IconSection({title: "Powershell", imageSource: "powershell.png", description: ""});
+const Pascal: React.FC = () => IconSection({title: "Pascal", imageSource: "pascal.png", description: ""});
+const Assembler: React.FC = () => IconSection({title: "Assembly", imageSource: "6502.jpg", description: ""});
+const BASIC: React.FC = () => IconSection({title: "BASIC", imageSource: "vb.png", description: ""});
+const SQL: React.FC = () => IconSection({title: "SQL", imageSource: "sql.png", description: ""});
+const Postgres: React.FC = () => IconSection({title: "PostgreSQL", imageSource: "postgresql.svg", description: ""});
+const EntityFramework: React.FC = () => IconSection({title: "EntityFramework", imageSource: "entity_framework.png", description: ""});
+const Geneva: React.FC = () => IconSection({title: "Geneva", imageSource: "geneva.png", description: ""});
 const Flutter: React.FC = () => IconSection({title: "Flutter", imageSource: "flutter.svg", description: ""});
-const Docker: React.FC = () => IconSection({title: "Docker", imageSource: "docker.svg", description: ""});
-const WSL: React.FC = () => IconSection({title: "WSL", imageSource: "wsl.svg", description: ""});
+const Docker: React.FC = () => IconSection({title: "Docker", imageSource: "docker.png", description: ""});
+const WSL: React.FC = () => IconSection({title: "WSL2", imageSource: "wsl.png", description: ""});
 const GRPC: React.FC = () => IconSection({title: "gRPC", imageSource: "grpc.svg", description: ""});
 const OAuth: React.FC = () => IconSection({title: "OAuth", imageSource: "oauth.svg", description: ""});
-const Blazor: React.FC = () =>IconSection({title: "Blazor", imageSource: "blazor.svg", description: ""});
+const Blazor: React.FC = () =>IconSection({title: "Blazor", imageSource: "blazor.png", description: ""});
 const TensorFlow: React.FC = () => IconSection({title: "Tensorflow", imageSource: "tensorflow.svg", description: ""});
-const Windows: React.FC = () => IconSection({title: "Windows", imageSource: "windows.svg", description: ""});
+const Windows: React.FC = () => IconSection({title: "Windows", imageSource: "microsoft-windows-icon.svg", description: ""});
 const Linux: React.FC = () =>IconSection({title: "Linux", imageSource: "linux-tux.svg", description: ""});
-const Android: React.FC = () =>IconSection({title: "Android", imageSource: "android.svg", description: ""});
+const Android: React.FC = () =>IconSection({title: "Android", imageSource: "android-vertical.svg", description: ""});
 const AWS: React.FC = () => IconSection({title: "AWS", imageSource: "aws.svg", description: ""});
-const Azure: React.FC = () => IconSection({title: "Azure", imageSource: "azure.svg", description: ""});
-const Security: React.FC = () => IconSection({title: "Systems Security", imageSource: "security.svg", description: ""});
-const ObjectOrientatedDesign: React.FC = () =>IconSection({title: "Object Oriented Design", imageSource: "oop.svg", description: ""});
-const TDD: React.FC = () => IconSection({title: "TDD", imageSource: "tdd.svg", description: ""});
-const Normalization: React.FC = () => IconSection({title: "Normalization", imageSource: "3nf.svg", description: ""});
-const AgileDevelopment: React.FC = () => IconSection({title: "Agile Development", imageSource: "agile.svg", description: ""});
+const Azure: React.FC = () => IconSection({title: "Azure", imageSource: "microsoft-azure.svg", description: ""});
+const Security: React.FC = () => IconSection({title: "Systems Security", imageSource: "security.jpg", description: ""});
+const ObjectOrientatedDesign: React.FC = () =>IconSection({title: "Object Oriented Design", imageSource: "objectoriented.png", description: ""});
+const TDD: React.FC = () => IconSection({title: "TDD", imageSource: "tdd.png", description: ""});
+const Normalization: React.FC = () => IconSection({title: "Normalization", imageSource: "normalization.jpg", description: ""});
+const AgileDevelopment: React.FC = () => IconSection({title: "Agile Development", imageSource: "agile.png", description: ""});
               
 const TechnologiesLanguagesBox: React.FC<ColorPageProps> = (props) => {
   return <FullScreenSection
@@ -95,7 +97,9 @@ const TechnologiesLanguagesBox: React.FC<ColorPageProps> = (props) => {
         <CSharp />
         <CPP />
         <Java />
+        <Kotlin />
         <ReactJS />
+        <JQuery />
         <Dart />
         <PowerShell />
         <Pascal />
