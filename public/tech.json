@@ -1,0 +1,89 @@
+{
+  "languages": [
+    {
+      "title": "Python",
+      "footer": "Utterly Amazing",
+      "description": "I started writing Python code at home about ten years ago. I love the language, and have used it for a variety of projects, including a web scraper, a web server, and a trading system.  It's real strength is in data processing, every AI and ML library you can think of is available for it.  No matter how much I write in Python, I always feel like I'm just scratching the surface of what it can do.",
+      "image": "python.svg"
+    },
+    {
+      "title": "ReactJS",
+      "footer": "Okay, I guess",
+      "description": "I've used ReactJS since 2019.  It's powerful and I love the amazing results we can get with it.  Indeed, this website itself was built with ReactJS and TypeScript. There are a lot of developers available to support it, but still there are some unavoidable conclusions when you get used to it.  All the rules, for hooks, for side effects, etc - all these are there because at the end of the day, this is Javascript, and everything is a function. ReactJS is good, but in my opinion, Blazor is a lot better",
+      "source": "https://reactjs.org/", 
+      "image": "react.png"
+    },
+    { "title": "C#", "image": "c-sharp.svg", "description": "I used C# the day version 1.0 was released and I've sworn by it since. It's everything C was intended to become. With .NET Core now, it's one of the fastest languages out there, and I can't think of much you cannot do with it. It lends itself to good design and application structure, it's very widely adopted and it has a great future ahead of it. 10/10", "footer": "Incredible" },
+    { "title": "C++", "image": "c-plusplus.svg", "description": "For low-level low-latency applications that must be close to the metal, C++ is the way to go.  I love it.  Yes, it has higher overheads than many other languages and you gotta be careful with it.  And the standard library could do with some extension.  And when are we going to get reflection? Still, though - if you have to go down there, do it with C++", "footer": "Ferrari" },
+    { "title": "Java", "image": "java.svg", "description": "The original cross-platform superlanguage. I actually really like Java, even though it doesn't support null safety.  Most of my Java code is written for Android, but I really enjoy using it, especially on server apps.  It's quite elegant and succint.", "footer": "Beautiful" },
+    { "title": "Kotlin", "image": "kotlin.png", "description": "No semicolons! And null safety! No wonder Google made it the language of choice for Android development now.  It's a fun language (pun intended) and I wish I saw more of it!", "footer": "Modern and Powerful" },
+    { "title": ".NET Framework", "image": "dotnet.svg", "description": "When this came out at the start of the century I was impressed, although it took time to figure out why we were backing away from DLLs and OCXs and restarting the ecosystem.  Fast forward to the current era, this old framework looks tired, but it led to .NET Core.  I enjoyed using it, built many websites and Windows apps with it, but it's day is done", "footer": "A good idea" },
+    { "title": ".NET Core", "image": "dotnet.svg", "description": "Fast, clean, open - and everything from the command line.  By far the best thing to come out of Microsoft in the last ten years or more.  My platform of choice for medium to large scale applications", "footer": "Excellent" },
+    { "title": "jQuery", "image": "jquery.png", "description": "I built a few websites in the late 2010s using JS and jQuery.  I think it gets a bad reputation, I honestly didn't find it that bad!  It's outdated now, but well known still.", "footer": "Old" },
+    { "title": "Dart", "image": "dart.svg", "description": "The Flutter framework for cross platform app development uses Dart and it's a beautiful language.  Very very similar to C#.  Full null safety.  Well done Google", "footer": "Type Safety FTW!" },
+    { "title": "Powershell", "image": "powershell.png", "description": "This is the best way to group a bunch of commands together with relatively clean logic. Robust, extensible, object oriented.  This deserves a better rap.", "footer": "Better than BASH" },
+    { "title": "Pascal", "image": "pascal.png", "description": "My first ever ever ever app was written in UCSD-Pascal on one page and typed into an Apple IIe.  I loved Pascal and looked down on BASIC.  It had such great structure", "footer": "Disused but was powerful" },
+    { "title": "Assembly", "image": "6502.jpg", "description": "I taught myself 6502 assembler (and later 8086) when I was still in school, using the BBC Micro.  If you need to get results, in 32K, this is the way to go!", "footer": "Geeky" },
+    { "title": "BASIC", "image": "vb.png", "description": "It has its uses and VB made it live far longer than necessary.  I used it a fair bit - but I'm glad it complies to MSIL so that you can easily use (i.e. replace) it with C#", "footer": "Ancient" },
+    { "title": "SQL", "image": "sql.png", "description": "Microsoft SQL server is a luxury car, so fast, sleek and efficient.  I love it.  I write clean SQL using CTEs.  If you write efficient code, you can get performance out of SQL server that compares to any other RDBMS out there", "footer": "Rolls Royce of Databases" },
+    { "title": "PostgreSQL", "image": "postgresql.svg", "description": "RDBMS engine, stripped down to the bare metal.  Very very fast - although significantly less easy to use than its competitors.  I wish it had more support for business logic, it's far better though to use it simply as a store of data and have all logic implemented above it.", "footer": "Formula-1 of Databases" }
+  ],
+  "frameworks": [
+    {
+      "title": "EntityFramework",
+      "image": "entity_framework.png",
+      "description": "Wonderful technology for abstracting away the database.  I've used it for years and it's a great way to build a data layer.  I've used it with SQL Server, PostgreSQL and MySQL.  It's a great way to build a data layer, but it's not the only way.  I've also used Dapper and I'm a big fan of that too."
+    },
+    { "title": "Geneva", "image": "geneva.png", "description": "Very powerful accounting platform.  I built the first Windows UI for this at Advent in 2007, and I used it as a developer ever since.  It has terrible problems with rounding errors and the Workflow Manager needs to be monitored carefully because it can crash or hang.  But once you get to know it, you can get a ton of amazing results.", "footer": "Great" },
+    { "title": "Flutter", "image": "flutter.svg", "description": "The story of the development of Flutter is quite amazing, and I have built cross-plaform apps using it that are breathtaking.  Now supports five native targets!  This is what React-Native should be.", "footer": "Amazing" },
+    { "title": "Docker", "image": "docker.png", "description": "Brilliant idea, and the foundation for many other containerization technologies.  I love this, wish it had been around years ago.", "footer": "Beautiful" },
+    { "title": "WSL2", "image": "wsl.png", "description": "The fact that Microsoft managed to make Linux run IN Windows is both amazing and hilarious.  I now do all my C++ coding inside WSL, mainly for the compiler support.  Well done MSFT", "footer": "It works!  Well!" },
+    { "title": "gRPC", "image": "grpc.svg", "description": "Using gRPC, you become aware how terribly inefficient REST is.  gRPC is twice as fast, because HTTP/2.  And PROTO files, like Swagger only better - this really is the way to connect server to client.  Anything else is silly", "footer": "Blisteringly fast and easy" },
+    { "title": "OAuth", "image": "oauth.svg", "description": "Tokenization, SSO, scalability, interoperability, what more could you ask for - big step forward in authentication and authorization. A little tricky to implement, especially in Azure - but worth it!", "footer": "Very clever" },
+    { "title": "Blazor", "image": "blazor.png", "description": "This is genius. So easy to use, compiles to WASM on the browser, and they have bridged the gap between the server version and client version in the latest .NET 8.  I very highly recommend Blazor.", "footer": "Better than ReactJS" },
+    { "title": "Tensorflow", "image": "tensorflow.svg", "description": "For machine learning, this is the best framework for me.  I know Pytorch is slightly more popular but this is what I first learned on, and I still love it.", "footer": "Amazing. Key." }
+  ],
+  "platforms": [
+    {
+      "title": "Windows",
+      "image": "microsoft-windows-icon.svg",
+      "description": ""
+    },
+    { "title": "Linux", "image": "linux-tux.svg", "description": "", "footer": "Server Nirvana" },
+    {
+      "title": "Android",
+      "image": "android-vertical.svg",
+      "description": "I've been writing Android apps since 2005.  I love it.  It's a great platform, and I've built some amazing apps with it, including the GoCar app that we got patented.  I've used Java, Kotlin and Flutter, as well as Rhomobile, to build apps on it.  The Android Development Studio Device Manager though - remains the only app I know that can reliably bring an entire Windows machine to a dead halt.  ", 
+      "footer": "The #1 best mobile platform"
+    },
+    { "title": "AWS", "image": "aws.svg", "description": "Among the big three clouds, there's fierce competition.  I've always leaned towards Microsoft, but IMHO at the moment AWS beats out Azure for usability, and on price too.  I've been AWS certified since Nov 2023", "footer": "The Best Cloud" },
+    { "title": "Azure", "image": "microsoft-azure.svg", "description": "I do love Azure, there are a lot of great things going on there - I used it to backbone the mobile gaming proof-of-concept app I built in 2020 and I know my way around it pretty well.", "footer": "Overly Complex but Very Powerful" }
+  ],
+  "principles": [
+    {
+      "title": "Systems Security",
+      "image": "security.jpg",
+      "description": "", 
+      "footer": "Nothing is more important"
+    },
+    {
+      "title": "Object Oriented Design",
+      "image": "objectoriented.png",
+      "description": "", 
+      "footer": "Completely Logical, Captain."
+    },
+    { "title": "TDD", "image": "tdd.png", "description": "", "footer": "" },
+    {
+      "title": "Normalization",
+      "image": "normalization.jpg",
+      "description": "", 
+      "footer": "Required for Sanity"
+    },
+    {
+      "title": "Agile Development",
+      "image": "agile.png",
+      "description": "",
+      "footer": "Effective Collaboration"
+    }
+  ]
+}
