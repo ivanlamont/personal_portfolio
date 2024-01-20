@@ -37,13 +37,19 @@
       "title": ".NET Framework",
       "image": "dotnet.svg",
       "description": "When this came out at the start of the century I was impressed, although it took time to figure out why we were backing away from DLLs and OCXs and restarting the ecosystem.  Fast forward to the current era, this old framework looks tired, but it led to .NET Core.  I enjoyed using it, built many websites and Windows apps with it, but it's day is done",
-      "footer": "A good idea"
+      "footer": "A good idea for its time"
     },
     {
       "title": ".NET Core",
       "image": "dotnet.svg",
       "description": "Fast, clean, open - and everything from the command line.  By far the best thing to come out of Microsoft in the last ten years or more.  My platform of choice for medium to large scale applications",
-      "footer": "Excellent"
+      "footer": "Excellent - The Future"
+    },
+    {
+      "title": "TypeScript",
+      "image": "typescript.png",
+      "description": "Javascript has so many shortcomings. One of the worst is that it has no type safety, and so TypeScript really helps to make it a lot more usable.  I've used it for ReactJS and NodeJS apps, and while I appreciate its strengths, it still leaves us with.. JavaScript.  So TypeScript is a great bandage, but it's not a cure.",
+      "footer": "A good idea but it's not Blazor"
     },
     {
       "title": "jQuery",
@@ -55,7 +61,7 @@
       "title": "Dart",
       "image": "dart.svg",
       "description": "The Flutter framework for cross platform app development uses Dart and it's a beautiful language.  Very very similar to C#.  Full null safety.  Well done Google",
-      "footer": "Type Safety FTW!"
+      "footer": "Null Safety FTW!"
     },
     {
       "title": "Powershell",
@@ -67,7 +73,7 @@
       "title": "Pascal",
       "image": "pascal.png",
       "description": "My first ever ever ever app was written in UCSD-Pascal on one page and typed into an Apple IIe.  I loved Pascal and looked down on BASIC.  It had such great structure",
-      "footer": "Disused but was powerful"
+      "footer": "Sadly, Disused - Nice while it Lasted!"
     }
   ],
   "additional languages": [
@@ -75,7 +81,7 @@
       "title": "Assembly",
       "image": "6502.jpg",
       "description": "I taught myself 6502 assembler (and later 8086) when I was still in school, using the BBC Micro.  If you need to get results, in 32K, this is the way to go!",
-      "footer": "Geeky"
+      "footer": "The Ultimate in Geeky"
     },
     {
       "title": "BASIC",

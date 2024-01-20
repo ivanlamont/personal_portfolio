@@ -41,6 +41,7 @@ const RingZero: React.FC = () => (
   <Box>
       <Heading as={heading_type} size={heading_size}>Rock & Roll</Heading>
       <Text>For a number of years, I was the lead singer and lead guitarist for Ring Zero.  It's hard to beat the thrill of playing guitar at full volume for a crowd - the adrenaline is incredible.  We played a few memorable shows, and I sometimes dream about "getting the band back together"!</Text>
+      <Image src={require("../images/ring-zero.png")} alt="Referee" />  
   </Box>
 );
 
@@ -48,6 +49,7 @@ const ManchesterUnited: React.FC = () => (
   <Box>
       <Heading as={heading_type} size={heading_size}>Glory, Glory...</Heading>
       <Text>Mecca for any Manchester United fan is Old Trafford.  I've been there several times, and one day I hope to bring my three sons too.  Although one of them is a Chelsea fan!  Eeeew.</Text>
+      <Image src={require("../images/old-trafford.avif")} alt="Referee" />  
   </Box>
 );
 
@@ -56,6 +58,7 @@ const ChessPlayer: React.FC = () => (
   <Box>
       <Heading as={heading_type} size={heading_size}>Chess</Heading>
       <Text>I love Chess, I play a little every day.  I've had a rating of 1900 before, but it takes a lot of practice.  If you'd like to play me, the link to my chess.com account is in the header.</Text>
+      <Image src={require("../images/chess.jpg")} alt="Referee" />
   </Box>
   );
       
@@ -63,7 +66,7 @@ const Referee: React.FC = () => (
   <Box>
       <Heading as={heading_type} size={heading_size}>Refereeing</Heading>
       <Text>I've been a <Link href="https://www.ussoccer.com/referee-program" target="_blank">licensed soccer referee</Link> since 2019.  It's an excellent way to keep fit, and if you have the required temperament, it's a great experience.  I love it - if you love football, give it a shot!</Text>
-      <Image src={require("../images/referee.jpg")} alt="Referee" />
+      <Image src={require("../images/referee.jpg")} alt="Referee" />  
   </Box>
 );
         

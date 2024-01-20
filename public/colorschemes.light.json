@@ -1,0 +1,9 @@
+{
+    "landing": ["#1a57c9", "#6795c9", "#a7b5d6", "#C8B8C8"],
+    "finance":  ["#f3faf0", "#edfae6", "#f0f7ed", "#e6fcd7", "#f1ffe8"],
+    "ed":  ["#fadcc8", "#fce9dc", "#fcf0e6", "#f7eee9"],
+    "ai":  ["#fbfafc", "#f5f0fa", "#fcfafc", "#f9f2fc", "#f8f0ff"],
+    "mobile":  ["#fcf7f8", "#faedef", "#fcebed", "#fcf5f6"],
+    "tech":  ["#e9f0f7", "#e9f2f7", "#e8effc", "#f0f2f5", "#f0f0f5", "#ebebff","#edf0f7"],
+    "about":  ["#fafae6", "#f5f4ce", "#f5f76a", "#fcfce3"]
+}

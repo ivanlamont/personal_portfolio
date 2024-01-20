@@ -2,6 +2,7 @@ import { ColorPageProps } from "../pages/ColorPage";
 import FullScreenSection, { StandardGrid } from "./FullScreenSection";
 import { Heading, Text, Image, Grid, GridItem, Link  } from "@chakra-ui/react";
 import withFullScreen from "./withFullScreen";
+import { motion } from 'framer-motion';
 
 const heading_type = "h3"
 const heading_size = "md"
@@ -38,27 +39,32 @@ const IconSection: React.FC<SingleTechBoxProps> = (props) => {
   const templateAreasFields = props.source ?`"header header" "icon main" "icon url" "icon footer"` : `"header header" "icon main" "icon footer"`;
   const templateAreasRows = props.source ? '28px 1fr 28px 28px' : '28px 1fr 28px';
 
-  return <Grid
-      templateAreas={templateAreasFields}
-      gridTemplateRows={templateAreasRows} 
-      gridTemplateColumns={'90px 1fr'}
-      gap='1'
-      border={'1px'}
-    >
-    <GridItem pl='2' bg='blue.800' area={'header'}>
-      <Heading as={heading_type} size={heading_size}>{props.title}</Heading>
-    </GridItem>
-    <GridItem pl='2' area={'icon'}>
-      <Image src={file} borderRadius='lg' boxSize={"80px"} />
-    </GridItem>
-    <GridItem pl='1' area={'main'}>
-      <Text>{props.description}</Text>
-    </GridItem>
-    {urlLink}
-    <GridItem pl='2' bg='blue.600' area={'footer'}>
-      <Text>Verdict: {props.footer}</Text>
-    </GridItem>
-  </Grid>
+  return <motion.div
+    whileHover={{ scale: 1.06 }}
+    transition={{ type: 'spring', stiffness: 30 }}
+  >
+    <Grid
+        templateAreas={templateAreasFields}
+        gridTemplateRows={templateAreasRows} 
+        gridTemplateColumns={'90px 1fr'}
+        gap='1'
+        border={'1px'}
+      >
+      <GridItem pl='2' bg='blue.800' area={'header'}>
+        <Heading as={heading_type} size={heading_size}>{props.title}</Heading>
+      </GridItem>
+      <GridItem pl='2' area={'icon'}>
+        <Image src={file} borderRadius='lg' boxSize={"80px"} />
+      </GridItem>
+      <GridItem pl='1' area={'main'}>
+        <Text>{props.description}</Text>
+      </GridItem>
+      {urlLink}
+      <GridItem pl='2' bg='blue.600' area={'footer'}>
+        <Text>Verdict: {props.footer}</Text>
+      </GridItem>
+    </Grid>
+  </motion.div>
 
 }
 

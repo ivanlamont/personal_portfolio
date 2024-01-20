@@ -19,8 +19,10 @@ export const TechnologiesContent: React.FC<ColorPageProps> = (props) => {
   
     if (techList.length == 0)
       return <Heading>Loading...</Heading>
-    else
-      return <> {Object.entries(techList).map((section) => (<TechnologiesSection colors={props.colorSet} sectionName={section[0]} data={section[1]} colorSet={props.colorSet} colorIndex={props.colorIndex ?? 1}  />))}  </>
+    else {
+      var i = 1;
+      return <> {Object.entries(techList).map((section) => (<TechnologiesSection colors={props.colorSet} sectionName={section[0]} data={section[1]} colorSet={props.colorSet} colorIndex={i++}  />))}  </>
+    }
   
   };
 

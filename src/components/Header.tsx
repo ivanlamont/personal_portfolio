@@ -8,8 +8,9 @@ import {
   faStackOverflow,
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, FormLabel, Switch, Link } from "@chakra-ui/react";
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
+import { useState } from "react";
 
 type Social = {
   id: number;
@@ -47,6 +48,14 @@ const socials: Social[] = [
 ];
 
 const Header = () => {
+
+  const [theme, setTheme] = useState<string>('light');
+  const toggleTheme = () => {
+      setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
+  };
+
+  const isCurrentlyDark = theme === 'dark';
+
   const handleClick = (anchor: string) => () => {
     const id = `${anchor}-section`;
     const element = document.getElementById(id);
@@ -86,8 +95,10 @@ const Header = () => {
           </nav>
           <nav>
             <HStack spacing={8}>
-              <a href='/#projects' key="projects" onClick={handleClick('projects')}>Portfolio</a>
-              <a href='/#contact-me' key="contact" onClick={handleClick('contactme')}>Contact Me</a>
+              <Link href="/" key="home" onClick={handleClick('home')}>Home</Link>
+              <Link href="/#projects" key="projects" onClick={handleClick('projects')}>Portfolio</Link>
+              <Link href="/#contact-me" key="contact" onClick={handleClick('contactme')}>Contact Me</Link>
+              {/* <FormLabel htmlFor='isChecked'>Dark:</FormLabel><Switch id='isChecked' isChecked={isCurrentlyDark} onChange={toggleTheme} /> */}
             </HStack>
           </nav>
         </HStack>

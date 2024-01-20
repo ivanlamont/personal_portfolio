@@ -43,7 +43,7 @@ const ProjectsSectionBox: React.FC = () => {
         gap={4}
       >
       {projectsList.map((project) => (
-          <GridItem>
+          <GridItem key={project.title}>
             <Card
               key={project.title}
               title={project.title}
