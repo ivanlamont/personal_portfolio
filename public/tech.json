@@ -3,32 +3,47 @@
     {
       "title": "Python",
       "footer": "Utterly Amazing",
-      "description": "I started writing Python code at home about ten years ago. I love the language, and have used it for a variety of projects, including a web scraper, a web server, and a trading system.  It's real strength is in data processing, every AI and ML library you can think of is available for it.  No matter how much I write in Python, I always feel like I'm just scratching the surface of what it can do.  Today, this is my #1 main development language",
-      "image": "python.svg"
+      "description": "I started writing Python code at home about ten years ago. Today, this is my #1 main development language - I love it, and have used it for an enormous number of different projects, such as tools to do web scraping, data ingestion into ML engines, a custom web server, and a simplified trading system.  Its real strength is in data processing, most AI and ML development absolutely requires it.  No matter how much I write in Python, I always feel like I'm just scratching the surface of what it can do.  I do find some things very frustrating - like round-to-even.  99.5 and 100.5 should not, IMHO, round to the same number.  What's so special about even numbers, why not round to odd?\n\nOne of pythons great strengths is the number of packages available for it.  Unless you're fanatical about low-latency execution, Python should be a serious candidate for any job.  I wish there weren't so many incompatibilities between 3.8 and 3.11, migration should be much easier.  I guess that's the price of progress.  ",
+      "usageHistory": "Started in 2011, used intermittently from that point, for scripted work etc.  Used in production for data processing from 2019 onward.  Now 100% of my AI & Machine Learning work is done in Python, every day.  Including weekends!",
+      "image": "python.svg",
+      "confidenceLevel": 7,
+      "score": 9.5
     },
     {
       "title": "C#",
       "image": "c-sharp.svg",
       "description": "I used C# the day version 1.0 was released and I've sworn by it since. It's everything C was intended to become. With .NET Core now, it's one of the fastest languages out there, and I can't think of much you cannot do with it. It lends itself to good design and application structure, it's very widely adopted and it has a great future ahead of it. 10/10",
-      "footer": "Incredible"
+      "usageHistory": "Daily since version 1.0, I guess that's over two solid decades now!",
+      "footer": "Incredible",
+      "confidenceLevel": 10,
+      "score": 9.5
     },
     {
       "title": "C++",
       "image": "c-plusplus.svg",
-      "description": "For low-level low-latency applications that must be close to the metal, C++ is the way to go.  I love it.  Yes, it has higher overheads than many other languages and you gotta be careful with it.  And the standard library could do with some extension.  And when are we going to get reflection? Still, though - if you have to go down there, do it with C++",
-      "footer": "Ferrari"
+      "description": "For low-level low-latency applications that must be close to the metal, C++ is the way to go.  It has a reputation as an ugly language but I still love it, it's like the grandmother of all that came after it.  Yes, it has higher overheads than many other languages and you gotta be careful with it.  And the standard library could do with some extension.  And when are we going to get reflection? Still, though - if you have to go down there, do it with C++",
+      "usageHistory": "Started mid 1980s, used professionally for UI development in '92, came back to it at Robbie Stevens in the late 90s, used it building a high speed trading system and user interface.  Now I'd only use it for low-latency work, or on a Raspberry Pi.",
+      "confidenceLevel": 7,
+      "score": 7,
+      "footer": "The Grand Old Lady of Code"
     },
     {
       "title": "Java",
       "image": "java.svg",
-      "description": "The original cross-platform superlanguage. I actually really like Java, even though it doesn't support null safety.  Most of my Java code is written for Android, but I really enjoy using it, especially on server apps.  It's quite elegant and succint.",
+      "description": "The original cross-platform superlanguage. I actually really like Java, even though it doesn't support null safety.  A lot of my older Android apps are written in Java.  I actually quite enjoy using it, especially on server apps.  It's quite elegant and succint.  It was an easy transition from C# to Java because a lot of the syntax and structural philosophies are similar, or the same.  The switch syntax is identical, for example.  I'm not a massive fan of having blocks of code embedded inside more code embedded in something else, and this can happen in Java if you're not disciplined enough to maintain readability.  But overall, I like it.",
       "source": "https://github.com/ivanlamont/TalkBack",
-      "footer": "Beautiful"
+      "usageHistory": "Began in 2008.  Intermittently since then, usually on legacy Android apps",
+      "confidenceLevel": 8.5,
+      "score": 8,
+      "footer": "Tries to be everything to everyone"
     },
     {
       "title": "Kotlin",
       "image": "kotlin.png",
-      "description": "No semicolons! And null safety! No wonder Google made it the language of choice for Android development now.  It's a fun language (pun intended) and I wish I saw more of it!",
+      "description": "No wonder Google made Kotlin the language of choice for Android development now.  I love that it has null safety by default.  It's a fun language (pun intended) and I wish I saw more of it!",
+      "usageHistory": "As soon as Google brought in support for Kotlin into Android Studio, I started using it.  Quite a lot of my Android code is now written in Kotlin.  I don't use it every day but it's so readable, it's easy to jump right back into it",
+      "confidenceLevel": 8.5,
+      "score": 7.5,
       "footer": "Modern and Powerful"
     }
   ],
@@ -92,7 +107,10 @@
     {
       "title": "SQL",
       "image": "sql.png",
-      "description": "Microsoft SQL server is a luxury car, so fast, sleek and efficient.  I love it.  I write clean SQL using CTEs.  If you write efficient code, you can get performance out of SQL server that compares to any other RDBMS out there",
+      "description": "Microsoft SQL server is a luxury car, so fast, sleek and efficient.  And the IDE is so powerful, I've always loved it.  I write nice clean concise readable SQL - I'm a big fan of using CTEs.  If you write efficient code, you can get performance out of SQL server that compares to any other RDBMS out there",
+      "usageHistory": "Used professionally since early 90s.  I've built massive databases with optimized partitioning using the (not cheap) Enterprise edition.  I've used it for data warehousing, for OLTP, for OLAP, for data processing, for data ingestion, for data export.  I've used it for everything.  I've used it for data science.  I've used it for AI.  I've used it for machine learning.  I've used the compact version on Windows CE.  I might have used it more often than my toothbrush.  I love it.",
+      "confidenceLevel": 9.5,
+      "score": 9,
       "footer": "Rolls Royce of Databases"
     },
     {

@@ -32,7 +32,7 @@ const ProjectsSectionBox: React.FC = () => {
   const cols = Math.ceil(projectsList.length/rows);
 
   return <Box> 
-    <Heading as="h1" id="projects-section">
+    <Heading as="h1" id="projects-section"  marginBottom={"20px"}>
         Areas of Expertise
     </Heading>
 

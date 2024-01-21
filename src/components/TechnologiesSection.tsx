@@ -18,6 +18,9 @@ export type SingleTechBoxProps = {
   image: string;
   description: string;
   title?: string;
+  usageHistory?: string;
+  score?: number;
+  confidenceLevel?: number;
   footer?: string;
   source?: string;
 }
