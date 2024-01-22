@@ -21,7 +21,7 @@ const EducationSectionTopBox: React.FC<ColorPageProps> = (props) => {
             <Image src={require("../images/trinity.jpg")} alt="Trinity College Dublin" />
             </GridItem>
             <GridItem>
-                <Text>My next steps, I anticipate I will graduate from University of Texas at Austin, after completing their <Link href="https://cdso.utexas.edu/msai" target="_blank">Masters in Artificial Intelligence</Link> course.  It looks to be one of the best courses in the world, and I am very excited about the prospect of studying there.
+                <Text>My next steps, I anticipate I will graduate from University of Texas at Austin, after completing their <Link href="https://cdso.utexas.edu/msai" target="_blank">Masters in Artificial Intelligence</Link> course.  It looks to be one of the best courses in the world, and I am very excited about the prospect what opportunities will open up after graduation.
                 </Text>        
                 <Image src={require("../images/UT-austin.jpg")} alt="University of Texas at Austin" />
             </GridItem>
@@ -54,21 +54,26 @@ const EducationSectionNonTechnicalQualificationsBox: React.FC<ColorPageProps> = 
         backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
         backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
     >  
-        <StandardGrid>
+        <Grid
+            marginTop={100}
+            h='530px'
+            templateRows='repeat(3, 1fr)'
+            templateColumns='{1}'
+            gap={9}
+        >
             <GridItem>
-                <Text>                In addition, there are a few non-technical things that I am passionate about, and have Qualifications in.  Such as...              
+                <Text>In addition, there are a few non-technical things that I am passionate about, and have Qualifications in.  Such as...              
                 </Text>        
             </GridItem>
             <GridItem>
-            </GridItem>
-            FAA Commercial Pilot
-            <GridItem>
-            FAA Instrument Rating
+                <Text>FAA Commercial Pilot / Instrument Rating</Text>
+                <Image src={"faa.jpg"} alt="FAA Commercial Pilot" maxHeight={"300px"} />            
             </GridItem>
             <GridItem>
-            California Notary Public
+                <Text>California Notary Public</Text>
+                <Image src={"./notary.jpg"} alt="Notary" maxHeight={"300px"} />            
             </GridItem>
-        </StandardGrid>
+        </Grid>
     </FullScreenSection>;
 };
     
