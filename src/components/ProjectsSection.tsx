@@ -35,7 +35,7 @@ const ProjectsSectionBox: React.FC = () => {
   return <Box> 
 
       <Grid
-        h='500px'
+        h='600px'
         templateRows={`repeat(${rows}, 1fr)`}
         templateColumns={`repeat(${cols}, 1fr)`}
         gap={4}
