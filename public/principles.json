@@ -1,0 +1,35 @@
+{    
+    "principles": [
+      {
+        "title": "Systems Security",
+        "image": "security.jpg",
+        "description": "I have always said, don't try to add security into a system later.  Always build it first, and then put the system inside it.  Otherwise, well, you know what happens.  Getting CISSP is on my short list of things to do.",
+        "footer": "Nothing is more important"
+      },
+      {
+        "title": "Object Oriented Design",
+        "image": "objectoriented.png",
+        "description": "OOP is the best way to build a system.  I've been doing it since I learned the basics at college in the 90s and I still love it.  I've used it in C++, Java, C#, Python, and even in Javascript.  Encapsulation, inheritance, abstraction - these are all foundational principles that allow us to build reliable large-scale systems that lend themselves toward maintainability.  Dependency Injection wouldn't be possible without OOP. I'm a big fan.",
+        "footer": "Completely Logical, Captain."
+      },
+      {
+        "title": "TDD",
+        "image": "tdd.png",
+        "description": "I have been evangelizing for TDD for many years now.  I have always believed you will not achieve full code coverage if you dont write the tests first.  Because plans to write tests later, remain just that - plans.  I have used TDD in C#, Python, Java, Javascript, and even in C++.",
+        "footer": "Required for Reliability"
+      },
+      {
+        "title": "Normalization",
+        "image": "normalization.jpg",
+        "description": "One of the great strengths and weaknesses of RDBMS systems is their flexibility.  You can do great things with them.  But you can also do terrible things with them.  Normalization is the key to building a good database.  Third Normal Form (3NF) is the minimum, for me.  Remove the possibility for the system to contain contradictory data, wherever possible.  If we need aggregation, try to optimize summarization of the leaf level data.  Stick to your guns on these principles and good things will happen down the road",
+        "footer": "Required for Sanity"
+      },
+      {
+        "title": "Agile Development",
+        "image": "agile.png",
+        "description": "Flexible, iterative, and responsive to change.  I've used Agile for many years now, and I've seen it work well and I've seen it fail.  It's not a silver bullet, but it's a good way to build software.  My favorite Agile methodology is Scrum, but I've also used Kanban.  The best thing about Agile is how well it lends itself to TDD, and it makes developers feel like more than just the code writers, it makes the entire process more collaborative and dynamic.",
+        "footer": "Effective Collaboration"
+      }
+    ]
+  }
+  

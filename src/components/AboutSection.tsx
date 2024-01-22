@@ -1,23 +1,15 @@
 import YouTube from "react-youtube";
 import FullScreenSection, { StandardGrid } from "./FullScreenSection";
-import { Flex, Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image, Link } from "@chakra-ui/react";
+import { Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image } from "@chakra-ui/react";
 import { Avatar } from "@chakra-ui/react";
 import { ColorPageProps } from "../pages/ColorPage";
+import { Flink } from "./Flink";
 
 const yt_flying = "0SvEWnMtX-A"
 const yt_landing = "napcu2KH5EU";
 
 const heading_type = "h3"
 const heading_size = "md"
-
-type FlinkProps = {
-  url: string;
-  text: string;
-}
-
-const Flink: React.FC<FlinkProps> = (props) => {
-  return <Link href={props.url} target="_blank" color='teal.500'>{props.text}</Link>  
-}
 
 const Intro: React.FC = () => (
     <Box>

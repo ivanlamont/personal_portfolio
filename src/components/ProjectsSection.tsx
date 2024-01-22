@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 import withFullScreen from "./withFullScreen";
+import { SpringIn } from "./SpringIn";
 
 const projects_json = './subsections.json'
 
@@ -28,29 +29,27 @@ const ProjectsSectionBox: React.FC = () => {
   if (projectsList == null)
     return <Heading>Loading...</Heading>
 
-  const rows = 1;
+  const rows = 2;
   const cols = Math.ceil(projectsList.length/rows);
 
   return <Box> 
-    <Heading as="h1" id="projects-section"  marginBottom={"20px"}>
-        Areas of Expertise
-    </Heading>
 
       <Grid
-        h='200px'
+        h='500px'
         templateRows={`repeat(${rows}, 1fr)`}
         templateColumns={`repeat(${cols}, 1fr)`}
         gap={4}
       >
       {projectsList.map((project) => (
           <GridItem key={project.title}>
-            <Card
-              key={project.title}
-              title={project.title}
-              description={project.description}
-              imageSrc={require("../images/" + project.image)}
-              target={project.link}
-            />
+            <SpringIn>
+              <Card
+                {...project}
+                key={project.title} 
+                imageSrc={require("../images/" + project.image)}
+                target={project.link}
+              />
+            </SpringIn>
           </GridItem>
         ))}
       </Grid>

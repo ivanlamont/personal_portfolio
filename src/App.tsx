@@ -1,16 +1,16 @@
 import {BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { ColorThemeContext } from './context/colorContext'; // import the context
 import MobilePage from './pages/Mobile';
 import ArtificialIntelligence from './pages/ArtificialIntelligence';
 import FinancialServices from './pages/FinancialServices';
 import MainPage from './pages/MainPage';
 import AboutPage from "./pages/AboutPage";
-import Technologies from './pages/Technologies';
 import Education from './pages/Education';
 import { Heading } from '@chakra-ui/react';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import chroma from "chroma-js";
+import Technologies from './components/TechnologiesContent';
+import ManagerPage from './pages/ManagerPage';
 
 const colorschemes_json = './colorschemes.json'
 
@@ -22,6 +22,9 @@ type ColorScheme = {
   ai: string[];
   mobile: string[];
   tech: string[];
+  languages: string[];
+  management: string[];
+  principles: string[];
   about: string[];
 }
 
@@ -43,8 +46,6 @@ function flipScheme(colorList: ColorScheme) {
 }
 
 function App() {
- // Add a closing parenthesis here
-
   const [colorList, setColorList] = useState<ColorScheme>({} as ColorScheme);
   const [colorTheme] = useState('light');
 
@@ -61,7 +62,6 @@ function App() {
     const activeColors = colorTheme === 'light' ? colorList : flipScheme(colorList);
     return ColorApp(activeColors);
   }
-
 }
 
 function ColorApp(colorList: ColorScheme) {
@@ -73,7 +73,10 @@ function ColorApp(colorList: ColorScheme) {
           <Route path="/ArtificialIntelligence" element={<ArtificialIntelligence colorSet={colorList.ai} />}></Route>
           <Route path="/Education" element={<Education colorSet={colorList.ed} />}></Route>
           <Route path="/Mobile" element={<MobilePage colorSet={colorList.mobile}  />}></Route>
-          <Route path="/Tech" element={<Technologies colorSet={colorList.tech} />}></Route>
+          <Route path="/Manager" element={<ManagerPage colorSet={colorList.management} />}></Route>
+          <Route path="/Principles" element={<Technologies colorSet={colorList.principles} sourceFile="./principles.json" />}></Route>
+          <Route path="/Languages" element={<Technologies colorSet={colorList.languages} sourceFile="./languages.json" />}></Route>
+          <Route path="/Tech" element={<Technologies colorSet={colorList.tech} sourceFile="./tech.json" />}></Route>
           <Route path="/About" element={<AboutPage colorSet={colorList.about} />}></Route>
       </Routes>
     </Router>    

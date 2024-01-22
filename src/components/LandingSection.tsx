@@ -1,6 +1,7 @@
 import React from "react";
 import {Text, Grid, GridItem, Image } from "@chakra-ui/react";
 import withFullScreen from "./withFullScreen";
+import { SpringIn } from "./SpringIn";
 
 const bio1 = "I first got my hands on a computer back in the 20th century.  ";
 const bio_brackets = " (Let's keep a little mystery in the story - I won't tell you exactly when... but suffice it to say, it was... a while ago).";
@@ -18,9 +19,13 @@ const LandingSectionGrid: React.FC = () => {
       gap={2}
     >
       <GridItem colSpan={1} >
-        <Text fontSize={really_big_font}>Hello, it's me...</Text>
-        <Text as='b' fontSize={massive_font}>Ivan</Text>
-        <Text as='b' fontSize={massive_font} color='tomato'>.</Text>
+        <SpringIn>
+          <Text fontSize={really_big_font}>Hello, it's me...</Text>
+        </SpringIn>
+        <SpringIn>
+          <Text as='b' fontSize={massive_font}>Ivan</Text>
+          <Text as='b' fontSize={massive_font} color='tomato'>.</Text>
+        </SpringIn>
       </GridItem>
       <GridItem rowSpan={3} colSpan={1}>    
         <Image src={require("../images/ivan_main.jpg")}  borderRadius='lg' >

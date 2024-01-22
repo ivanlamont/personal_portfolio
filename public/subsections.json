@@ -16,7 +16,7 @@
         "title": "Mobile & Geolocation",
         "link": "/Mobile",
         "description": "My most successful Start-Up experience, and an area that I am still very active in, is Mobile Application Development.",
-        "image": "gocar_lombard.jpg"
+        "image": "gocartours.jpg"
     },
     {
         "title": "Education & Certification",
@@ -25,10 +25,28 @@
         "image": "education.jpg"
     },
     {
+        "title": "Leadership & Management",
+        "link": "/Manager",
+        "description": "A summary of my leadership and management experience and philosophy",
+        "image": "leadership.jpg"
+    },
+    {
         "title": "Technologies & Platforms",
         "link": "/Tech",
-        "description": "Coding and development platforms, languages and technologies that I've used throughout my career",
+        "description": "Development platforms and technologies that I've used throughout my career",
         "image": "technology.jpg"
+    },
+    {
+        "title": "Coding Languages",
+        "link": "/Languages",
+        "description": "Coding languages - my experience, some examples, and some of my thoughts on each",
+        "image": "languages.jpg"
+    },
+    {
+        "title": "Principles & Practices",
+        "link": "/Principles",
+        "description": "Industry best practices and principles that I follow",
+        "image": "principles.jpg"
     },
     {
         "title": "About",

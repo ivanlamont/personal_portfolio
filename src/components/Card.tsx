@@ -1,4 +1,4 @@
-import { HStack, Image, Text, VStack, Box, Link } from "@chakra-ui/react";
+import { HStack, Image, Text, VStack, Box, Link, Center } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { motion } from 'framer-motion';
@@ -13,13 +13,14 @@ export type CardType = {
 const Card = (cardInfo: CardType) => {
   return (
     <motion.div
-      whileHover={{ scale: 1.06 }}
+      whileHover={{ scale: 1.05 }}
       transition={{ type: 'spring', stiffness: 30 }}
     >
       <Box maxW='sm' borderRadius='lg' overflow='hidden' bg='white' boxShadow='dark lg'>
         <Link href={cardInfo.target}>
           <VStack maxHeight="400px">
-            <Image src={cardInfo.imageSrc} fit={"contain"}></Image>
+            <Box minHeight={"170px"} color="red"> <Image p="5px" src={cardInfo.imageSrc} objectFit='fill'></Image> </Box>
+            
             <Box p='3' minHeight="180">
               <Box display='flex' alignItems='baseline'>
                 <Text as='b' fontSize='2xl' color='black'>{cardInfo.title}</Text>
