@@ -44,6 +44,7 @@
       "image": "sql.png",
       "description": "Microsoft SQL server is a luxury car, so fast, sleek and efficient.  And the IDE is so powerful, I've always loved it.  I write nice clean concise readable SQL - I'm a big fan of using CTEs.  If you write efficient code, you can get performance out of SQL server that compares to any other RDBMS out there",
       "usageHistory": "Used professionally since early 90s.  I've built massive databases with optimized partitioning using the (not cheap) Enterprise edition.  I've used it for data warehousing, for OLTP, for OLAP, for data processing, for data ingestion, for data export.  I've used it for everything.  I've used it for data science.  I've used it for AI.  I've used it for machine learning.  I've used the compact version on Windows CE.  I might have used it more often than my toothbrush.  I love it.",
+      "source": "https://github.com/ivanlamont/TourDatabase",
       "confidenceLevel": 9.5,
       "score": 9,
       "footer": "Rolls Royce of Databases"
