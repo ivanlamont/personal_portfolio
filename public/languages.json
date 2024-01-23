@@ -52,7 +52,7 @@
     {
       "title": "Java",
       "image": "java.svg",
-      "description": "The original cross-platform superlanguage. I actually really like Java, even though it doesn't support null safety.  A lot of my older Android apps are written in Java.  I actually quite enjoy using it, especially on server apps.  It's quite elegant and succint.  It was an easy transition from C# to Java because a lot of the syntax and structural philosophies are similar, or the same.  The switch syntax is identical, for example.  I'm not a massive fan of having blocks of code embedded inside more code embedded in something else, and this can happen in Java if you're not disciplined enough to maintain readability.  But overall, I like it.",
+      "description": "The original cross-platform superlanguage. I actually really like Java, even though it doesn't support null safety. Or default parameter values.  A lot of my older Android apps are written in Java.  I actually quite enjoy using it, especially on server apps.  It's quite elegant and succint.  It was an easy transition from C# to Java because a lot of the syntax and structural philosophies are similar, or the same.  The switch syntax is identical, for example.  I'm not a massive fan of having blocks of code embedded inside more code embedded in something else, and this can happen in Java if you're not disciplined enough to maintain readability.  But overall, I like it.",
       "source": "https://github.com/ivanlamont/TalkBack",
       "usageHistory": "Began in 2008.  Intermittently since then, usually on legacy Android apps",
       "confidenceLevel": 8.5,
@@ -62,7 +62,7 @@
     {
       "title": "Kotlin",
       "image": "kotlin.png",
-      "description": "No wonder Google made Kotlin the language of choice for Android development now.  I love that it has null safety by default.  It's a fun language (pun intended) and I wish I saw more of it!",
+      "description": "No wonder Google made Kotlin the language of choice for Android development now.  I love that it has null safety by default.  It's a fun language (pun intended) and I wish I saw more of it!  Kotlin is becoming bigger on the server side now, mainly because of its compatibility with Java.  This is a very good thing, if you ask me!",
       "usageHistory": "As soon as Google brought in support for Kotlin into Android Studio, I started using it.  Quite a lot of my Android code is now written in Kotlin.  I don't use it every day but it's so readable, it's easy to jump right back into it",
       "confidenceLevel": 8.5,
       "score": 7.5,

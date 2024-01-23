@@ -18,7 +18,7 @@ const Card = (cardInfo: CardType) => {
     >
       <Box maxW='sm' borderRadius='lg' overflow='hidden' bg='white' boxShadow='dark lg'>
         <Link href={cardInfo.target}>
-          <VStack maxHeight="400px" display='flex' alignItems='start'>
+          <VStack maxHeight="390px" display='flex' alignItems='start'>
             <Box minHeight={"170px"} color="red"> <Image p="5px" src={cardInfo.imageSrc} objectFit='fill'></Image> </Box>
             
             <VStack display='flex' p='3' minHeight="180" alignItems='start'>

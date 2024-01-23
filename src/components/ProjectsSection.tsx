@@ -35,10 +35,10 @@ const ProjectsSectionBox: React.FC = () => {
   return <Box> 
 
       <Grid
-        h='650px'
+        h='630px'
         templateRows={`repeat(${rows}, 1fr)`}
         templateColumns={`repeat(${cols}, 1fr)`}
-        gap={4}
+        gap={3}
       >
       {projectsList.map((project) => (
           <GridItem key={project.title}>
