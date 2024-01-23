@@ -1,6 +1,6 @@
 import React from "react";
 import withColorPage, { ColorPageProps } from "./ColorPage";
-import { GridItem, Heading, Text } from "@chakra-ui/react";
+import { GridItem, Heading, Text, Flex } from "@chakra-ui/react";
 import FullScreenSection, { StandardGrid } from "../components/FullScreenSection";
 import withFullScreen from "../components/withFullScreen";
 
@@ -10,11 +10,24 @@ const ManagerEssayBox: React.FC<ColorPageProps> = (props) => {
         backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
         backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
     >  
+    <Flex
+    _before={{
+        content: '""',
+        bgImage: './handshake.jpg',
+        bgSize: "cover",
+        pos: "absolute",
+        top: 0,
+        right: 0,
+        left: 0,
+        bottom: 0,
+        opacity: 0.1,
+      }}
+      >
         <StandardGrid>
             <GridItem>
                 <Heading>My Management Philosophy</Heading>
 
-                <Text marginTop={"11px"}>Managing applications developers has been compared - unfavorably - to shepherding cats.  It can certainly be a challenge - but as a cat myself, I know how to get the best out of my fellow felines.  Every cat is different, every cat deserves respect, and every cat has something incredible to offer.  The real skill in management is knowing how to get the best out of each team member.</Text>
+                <Text marginTop={"28px"}>Managing applications developers has been compared - unfavorably - to shepherding cats.  It can certainly be a challenge - but as a cat myself, I know how to get the best out of my fellow felines.  Every cat is different, every cat deserves respect, and every cat has something incredible to offer.  The real skill in management is knowing how to get the best out of each team member.</Text>
                 <Text marginTop={"11px"}>My first team management experience was in 2003.  After building the proof-of-concept application for GoCar, the next steps were to build a team and take it to production.  I stepped from being a solo developer, to a full team lead.</Text>
                 <Text marginTop={"11px"}>Surprisingly, although the jump to management was quite a learning curve, I really enjoyed it.  With a budget of $3.6mm from an Angel Investor, I brought in a team of twelve, and built the platform up from ideas on a board, to revenue-generating real world systems, in a few short months.  </Text>
                 <Text marginTop={"11px"}>I continued to write software, alongside all the other developers.  I like to lead from the front, doing collaborative code reviews, encouraging new ideas, and making sure the team has a healthy cross-section of skillsets and specialties.</Text>
@@ -24,6 +37,7 @@ const ManagerEssayBox: React.FC<ColorPageProps> = (props) => {
                 <Text marginTop={"11px"}></Text>
             </GridItem>
         </StandardGrid>
+        </Flex>
     </FullScreenSection>;
 };
 
