@@ -1,8 +1,8 @@
 import YouTube from "react-youtube";
 import React from "react";
-import withFullScreen from "./withFullScreen";
+import withSingleSection, { SingleSectionProps } from "./withSingleSection";
 import { Grid, GridItem, Heading, Text, Box, Link  } from "@chakra-ui/react";
-import { ColorPageProps } from "../pages/ColorPage";
+import { PageProps } from "../pages/MultiSectionPage";
 import FullScreenSection, { StandardGrid } from "./FullScreenSection";
 
 const yt1_dev_since_2002 = 'dxyewhrAX4w';
@@ -42,12 +42,8 @@ const Languages: React.FC = () => (
     </GridItem>
 );
 
-const MobileHistorySectionBox: React.FC<ColorPageProps> = (props) => {
-    return <FullScreenSection
-      isDarkBackground
-      backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
-      backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
-    >  
+const MobileHistorySectionBox: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
+    return <FullScreenSection {...props} >
         <StandardGrid>
             <Intro />
             <Historical />
@@ -56,19 +52,15 @@ const MobileHistorySectionBox: React.FC<ColorPageProps> = (props) => {
     </FullScreenSection>;  
 };
 
-const MobileRecentSectionBox: React.FC<ColorPageProps> = (props) => {
-    return <FullScreenSection
-      isDarkBackground
-      backgroundTopColor={props.colorSet[(props.colorIndex??1)-1]}
-      backgroundBottomColor={props.colorSet[props.colorIndex??1]}
-    >  
+const MobileRecentSectionBox: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
+    return <FullScreenSection {...props} >
         <StandardGrid>
             <Tooling />
         </StandardGrid>  
     </FullScreenSection>
 }
 
-export const MobileHistorySection = withFullScreen(MobileHistorySectionBox);
-export const MobileRecentSection = withFullScreen(MobileRecentSectionBox);
+export const MobileHistorySection = withSingleSection(MobileHistorySectionBox);
+export const MobileRecentSection = withSingleSection(MobileRecentSectionBox);
 
 

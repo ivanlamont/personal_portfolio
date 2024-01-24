@@ -1,9 +1,10 @@
 import YouTube from "react-youtube";
-import FullScreenSection, { StandardGrid } from "./FullScreenSection";
+import FullScreenSection, { FullScreenSectionData, StandardGrid } from "./FullScreenSection";
 import { Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image } from "@chakra-ui/react";
 import { Avatar } from "@chakra-ui/react";
-import { ColorPageProps } from "../pages/ColorPage";
+import { PageProps } from "../pages/MultiSectionPage";
 import { Flink } from "./Flink";
+import { SingleSectionProps } from "./withSingleSection";
 
 const yt_flying = "0SvEWnMtX-A"
 const yt_landing = "napcu2KH5EU";
@@ -90,11 +91,8 @@ const Referee: React.FC = () => (
 );
         
 
-const AboutFlying: React.FC<ColorPageProps> = (props) => {
-    return <FullScreenSection      
-      backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
-      backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
-    >  
+const AboutFlying: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
+  return <FullScreenSection {...props} >  
     <StandardGrid>
       <GridItem colSpan={2}>
         <Intro />
@@ -110,14 +108,10 @@ const AboutFlying: React.FC<ColorPageProps> = (props) => {
       </GridItem>
     </StandardGrid>
   </FullScreenSection>;
-  
-}  
+};
 
-const AboutMusic: React.FC<ColorPageProps> = (props) => {
-  return <FullScreenSection      
-    backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
-    backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
-  >  
+const AboutMusic: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
+  return <FullScreenSection   {...props}  >  
     <StandardGrid>
       <RingZero />
       <GuitarBuilder />
@@ -126,11 +120,8 @@ const AboutMusic: React.FC<ColorPageProps> = (props) => {
 
 }  
    
-const AboutSports: React.FC<ColorPageProps> = (props) => {
-  return <FullScreenSection      
-    backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
-    backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
-  >  
+const AboutSports: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
+  return <FullScreenSection   {...props}  >  
     <StandardGrid>
       <ChessPlayer />
       <Referee />
@@ -140,7 +131,7 @@ const AboutSports: React.FC<ColorPageProps> = (props) => {
 
 }  
 
-const AboutSection: React.FC<ColorPageProps> = (props) => {
+const AboutSection: React.FC<PageProps> = (props) => {
     return <>
       <AboutFlying  {...props} colorIndex={1} />
       <AboutMusic {...props} colorIndex={2} />

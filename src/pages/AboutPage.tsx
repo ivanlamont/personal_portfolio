@@ -1,11 +1,12 @@
 import React from "react";
 import AboutSection from "../components/AboutSection";
-import withColorPage, { ColorPageProps } from "./ColorPage";
+import withMultisectionPage, { PageProps } from "./MultiSectionPage";
+import { SingleSectionProps } from "../components/withSingleSection";
 
-const AboutContent: React.FC<ColorPageProps> = (props) => {
-    return <AboutSection {...props} colorIndex={1} />;
+const AboutContent: React.FC<PageProps> = (props) => {
+    return <AboutSection {...props} />;
 }
 
-const AboutPage = withColorPage(AboutContent)
+const AboutPage = withMultisectionPage(AboutContent)
 
 export default AboutPage;

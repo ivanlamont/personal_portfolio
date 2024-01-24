@@ -1,16 +1,12 @@
 import YouTube from "react-youtube";
 import React from "react";
-import withFullScreen from "./withFullScreen";
+import withSingleSection, { SingleSectionProps } from "./withSingleSection";
 import { Box, Grid, GridItem, Heading, Text, Image, Link, VStack } from "@chakra-ui/react";
 import FullScreenSection, { StandardGrid } from "./FullScreenSection";
-import { ColorPageProps } from "../pages/ColorPage";
+import { PageProps } from "../pages/MultiSectionPage";
 
-const EducationSectionTopBox: React.FC<ColorPageProps> = (props) => {
-    return <FullScreenSection
-        isDarkBackground
-        backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
-        backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
-    >  
+const EducationSectionTopBox: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
+    return <FullScreenSection {...props} >  
         <StandardGrid>
             <GridItem colSpan={2}>
             <Heading as={"h1"} size={"lg"}>Educating Ivan</Heading>
@@ -29,12 +25,8 @@ const EducationSectionTopBox: React.FC<ColorPageProps> = (props) => {
     </FullScreenSection>;
 };
 
-const EducationSectionProfessionalQualificationsBox: React.FC<ColorPageProps> = (props) => {
-    return <FullScreenSection
-        isDarkBackground
-        backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
-        backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
-    >  
+const EducationSectionProfessionalQualificationsBox: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
+    return <FullScreenSection {...props} >
         <StandardGrid>
             <GridItem>
                 <Text>Certified Tensorflow Developer</Text>
@@ -48,12 +40,8 @@ const EducationSectionProfessionalQualificationsBox: React.FC<ColorPageProps> = 
     </FullScreenSection>;
 };
 
-const EducationSectionNonTechnicalQualificationsBox: React.FC<ColorPageProps> = (props) => {
-    return <FullScreenSection
-        isDarkBackground
-        backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
-        backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
-    >  
+const EducationSectionNonTechnicalQualificationsBox: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
+    return <FullScreenSection {...props} >
         <Grid
             marginTop={100}
             h='530px'
@@ -77,9 +65,9 @@ const EducationSectionNonTechnicalQualificationsBox: React.FC<ColorPageProps> = 
     </FullScreenSection>;
 };
     
-export const EducationSection = withFullScreen(EducationSectionTopBox);
-export const EducationSectionPro = withFullScreen(EducationSectionProfessionalQualificationsBox);
-export const EducationSectionNonTechnical = withFullScreen(EducationSectionNonTechnicalQualificationsBox);
+export const EducationSection = withSingleSection(EducationSectionTopBox);
+export const EducationSectionPro = withSingleSection(EducationSectionProfessionalQualificationsBox);
+export const EducationSectionNonTechnical = withSingleSection(EducationSectionNonTechnicalQualificationsBox);
 
 export default EducationSection;
 

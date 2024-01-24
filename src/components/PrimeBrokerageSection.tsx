@@ -1,7 +1,8 @@
 import YouTube from "react-youtube";
 import FullScreenSection, { StandardGrid } from "./FullScreenSection";
 import { Flex, Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image } from "@chakra-ui/react";
-import { ColorPageProps } from "../pages/ColorPage";
+import { PageProps } from "../pages/MultiSectionPage";
+import { SingleSectionProps } from "./withSingleSection";
 
 const yt_prime_brokerage_ops = 'bSDkoWqCGL8';
 const heading_type = "h3"
@@ -86,12 +87,8 @@ const Compliance: React.FC = () => (
   </Box>
 );
 
-export const PrimeBrokerageTopSection: React.FC<ColorPageProps> = (props) => {
-  return <FullScreenSection
-    isDarkBackground
-    backgroundTopColor={props.colorSet[(props.colorIndex??1)-1]}
-    backgroundBottomColor={props.colorSet[props.colorIndex??1]}
-  >  
+export const PrimeBrokerageTopSection: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
+  return <FullScreenSection {...props} >
     <StandardGrid>
       <GridItem  colSpan={2}>    
         <Intro />
@@ -104,12 +101,8 @@ export const PrimeBrokerageTopSection: React.FC<ColorPageProps> = (props) => {
   </FullScreenSection>
 }
 
-export const PrimeBrokerageBusinessSection: React.FC<ColorPageProps> = (props) => {
-    return <FullScreenSection
-    isDarkBackground
-    backgroundTopColor={props.colorSet[(props.colorIndex??1)-1]}
-    backgroundBottomColor={props.colorSet[props.colorIndex??1]}
-  >  
+export const PrimeBrokerageBusinessSection: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
+    return <FullScreenSection {...props} >
     <StandardGrid>
       <AccountingSystems />
       <MarginRiskCalls />
@@ -119,12 +112,8 @@ export const PrimeBrokerageBusinessSection: React.FC<ColorPageProps> = (props) =
   </FullScreenSection>
 }
 
-export const PrimeBrokerageDetailsSection: React.FC<ColorPageProps> = (props) => {
-  return <FullScreenSection
-    isDarkBackground
-    backgroundTopColor={props.colorSet[(props.colorIndex??1)-1]}
-    backgroundBottomColor={props.colorSet[props.colorIndex??1]}
-  >  
+export const PrimeBrokerageDetailsSection: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
+  return <FullScreenSection {...props} >
     <StandardGrid>
       <SymbolChangesCorporateActionsSplits />
       <MoneyMarketCapitalActivity />

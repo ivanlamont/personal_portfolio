@@ -1,15 +1,11 @@
 import React from "react";
-import withColorPage, { ColorPageProps } from "./ColorPage";
+import withMultisectionPage, { PageProps } from "./MultiSectionPage";
 import { GridItem, Heading, Text, Flex } from "@chakra-ui/react";
 import FullScreenSection, { StandardGrid } from "../components/FullScreenSection";
-import withFullScreen from "../components/withFullScreen";
+import withSingleSection from "../components/withSingleSection";
 
-const ManagerEssayBox: React.FC<ColorPageProps> = (props) => {
-    return <FullScreenSection
-        isDarkBackground
-        backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
-        backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
-    >  
+const ManagerEssayBox: React.FC<PageProps> = (props) => {
+    return <FullScreenSection {...props} >
     <Flex
     _before={{
         content: '""',
@@ -41,15 +37,15 @@ const ManagerEssayBox: React.FC<ColorPageProps> = (props) => {
     </FullScreenSection>;
 };
 
-const EssaySection = withFullScreen(ManagerEssayBox);
+const EssaySection = withSingleSection(ManagerEssayBox);
 
-const ManagerContent: React.FC<ColorPageProps> = (props) => {
+const ManagerContent: React.FC<PageProps> = (props) => {
     return <>
-      <EssaySection colors={props.colorSet} colorIndex={props.colorIndex?? 1} {...props}/>
+      <EssaySection  colorIndex={1} {...props}/>
     </>    
 }
 
-const ManagerPage = withColorPage(ManagerContent)
+const ManagerPage = withMultisectionPage(ManagerContent)
 
 export default ManagerPage;
 

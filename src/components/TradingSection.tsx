@@ -2,7 +2,8 @@ import YouTube from "react-youtube";
 import FullScreenSection from "./FullScreenSection";
 import { Flex, Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image } from "@chakra-ui/react";
 import { StandardGrid } from "./FullScreenSection";
-import { ColorPageProps } from "../pages/ColorPage";
+import { PageProps } from "../pages/MultiSectionPage";
+import { SingleSectionProps } from "./withSingleSection";
 
 const yt_trading_latency = 'XGyGISmAhik';
 const heading_type = "h3"
@@ -50,12 +51,8 @@ const NetCoreMaturity: React.FC = () => (
   </Box>
 );
 
-export const TradingSection: React.FC<ColorPageProps> = (props) => {
-    return <FullScreenSection
-      isDarkBackground
-      backgroundTopColor={props.colorSet[(props.colorIndex??1)-1]}
-      backgroundBottomColor={props.colorSet[props.colorIndex??1]}
-      >  
+export const TradingSection: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
+    return <FullScreenSection {...props} >
       <StandardGrid>
         <GridItem colSpan={2}>
           <Heading as={"h1"} size={"lg"}>Financial Services</Heading>

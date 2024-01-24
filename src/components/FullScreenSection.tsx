@@ -1,12 +1,13 @@
 import * as React from "react";
 import { Grid, StackProps, VStack } from "@chakra-ui/react";
 import chroma from "chroma-js";
+import { PageProps } from "../pages/MultiSectionPage";
+import { SingleSectionProps } from "./withSingleSection";
 
 export type FullScreenSectionData = {
-  children: React.ReactNode, 
-  isDarkBackground?: boolean,
-  backgroundTopColor: string, 
-  backgroundBottomColor: string
+  children?: React.ReactNode, 
+  backgroundTopColor?: string, 
+  backgroundBottomColor?: string
 }
 
 export const StandardGrid = ({ children }: { children: React.ReactNode }) => (
@@ -21,7 +22,7 @@ export const StandardGrid = ({ children }: { children: React.ReactNode }) => (
   </Grid>
 );
 
-function getTextColor( color1: string, color2: string ) {
+export function getTextColor( color1: string, color2: string ) {
   const c1 = chroma(color1);
   const c2 = chroma(color2);
   const mid = c1.mix(c2, 0.5, 'rgb');
@@ -29,11 +30,16 @@ function getTextColor( color1: string, color2: string ) {
   return contrast > 4.5 ? 'black' : 'white';
 }
 
-const FullScreenSection = ( data: FullScreenSectionData, boxProps: StackProps ) => {
-  const grad = 'linear(to-b, ' + data.backgroundTopColor + ', ' + data.backgroundBottomColor + ')';
-  const textColor = getTextColor(data.backgroundTopColor, data.backgroundBottomColor)
-  return (
-    <VStack
+const FullScreenSection = ( props: PageProps | StackProps | SingleSectionProps ) => {
+  const page = props as PageProps
+  const section = props as SingleSectionProps
+  const data = props as FullScreenSectionData
+  const boxProps = props as StackProps
+  const backgroundTopColor = page.colorSet[(section.colorIndex ?? 1 ) - 1]
+  const backgroundBottomColor= page.colorSet[section.colorIndex ?? 1]
+  const grad = 'linear(to-b, ' + backgroundTopColor + ', ' + backgroundBottomColor + ')';
+  const textColor = getTextColor(backgroundTopColor, backgroundBottomColor)
+  return  <VStack
       bgGradient={grad}
       color={textColor}
     >
@@ -41,7 +47,6 @@ const FullScreenSection = ( data: FullScreenSectionData, boxProps: StackProps ) 
         {data.children}
       </VStack>
     </VStack>
-  );
-};
+}
 
 export default FullScreenSection;

@@ -1,16 +1,16 @@
 import LandingSection from ".././components/LandingSection";
 import ProjectsSection from ".././components/ProjectsSection";
 import ContactMeSection from ".././components/ContactMeSection";
-import withColorPage, { ColorPageProps } from "./ColorPage";
+import withMultisectionPage, { PageProps } from "./MultiSectionPage";
 
-const MainPageContent: React.FC<ColorPageProps> = (props) => {
+const MainPageContent: React.FC<PageProps> = (props) => {
   return <>
-    <LandingSection colors={props.colorSet} colorIndex={1} />
-    <ProjectsSection colors={props.colorSet} colorIndex={2} />
-    <ContactMeSection colors={props.colorSet} colorIndex={3} />
+    <LandingSection  colorIndex={1} {...props} />
+    <ProjectsSection   colorIndex={2}  {...props} />
+    <ContactMeSection   colorIndex={3} {...props}  />
   </>;
 }
 
-const MainPage = withColorPage(MainPageContent);
+const MainPage = withMultisectionPage(MainPageContent);
 
 export default MainPage;

@@ -1,15 +1,15 @@
 import React from "react";
-import withColorPage, { ColorPageProps } from "./ColorPage";
+import withMultisectionPage, { PageProps } from "./MultiSectionPage";
 import {MobileHistorySection, MobileRecentSection} from "../components/MobileSections";
 
-const MobileContent: React.FC<ColorPageProps> = (props) => {
+const MobileContent: React.FC<PageProps> = (props) => {
     return <>
-      <MobileHistorySection colors={props.colorSet} {...props} colorIndex={1}  />
-      <MobileRecentSection colors={props.colorSet} {...props} colorIndex={2}  />
+      <MobileHistorySection  {...props} colorIndex={1}  />
+      <MobileRecentSection   {...props} colorIndex={2}  />
     </> 
 }
 
-const MobilePage = withColorPage(MobileContent)
+const MobilePage = withMultisectionPage(MobileContent)
 
 export default MobilePage;
 

@@ -17,13 +17,14 @@ const Card = (cardInfo: CardType) => {
       transition={{ type: 'spring', stiffness: 30 }}
     >
       <Box maxW='sm' borderRadius='lg' overflow='hidden' bg='white' boxShadow='dark lg'>
-        <Link href={cardInfo.target}>
+        <Link href={cardInfo.target} _hover={{ textDecoration: "none" }} >
           <VStack maxHeight="390px" display='flex' alignItems='start'>
-            <Box minHeight={"170px"} color="red"> <Image p="5px" src={cardInfo.imageSrc} objectFit='fill'></Image> </Box>
-            
+            <Box minHeight={"170px"} color="red"> 
+              <Image p="5px" src={cardInfo.imageSrc} objectFit='fill' borderRadius='lg'></Image>
+            </Box>            
             <VStack display='flex' p='3' minHeight="180" alignItems='start'>
               <Box display='flex' alignItems='start'>
-                <Text as='b' fontSize='2xl' color='black'>{cardInfo.title}</Text>
+                <Text as='b' fontSize='xl' color='black'>{cardInfo.title}</Text>
               </Box>
               <Box display='flex' alignItems='start' top ='10'>
                 <Text fontSize='sm' color='black'>{cardInfo.description}</Text>

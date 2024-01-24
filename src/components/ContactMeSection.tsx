@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 
 import * as Yup from 'yup';
-import withFullScreen from "./withFullScreen";
+import withSingleSection from "./withSingleSection";
 import useSubmit from "../hooks/useSubmit";
 import {useAlertContext} from "../context/alertContext";
 
@@ -95,7 +95,7 @@ const ContactMeStack: React.FC = () => {
 </VStack>
 };
 
-const ContactMeSection = withFullScreen(ContactMeStack);
+const ContactMeSection = withSingleSection(ContactMeStack);
   
 export default ContactMeSection;
 

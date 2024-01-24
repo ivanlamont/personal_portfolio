@@ -3,7 +3,7 @@ import {useState, useEffect} from "react";
 import axios from 'axios';
 import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
 import Card from "./Card";
-import withFullScreen from "./withFullScreen";
+import withSingleSection from "./withSingleSection";
 import { SpringIn } from "./SpringIn";
 
 const projects_json = './subsections.json'
@@ -57,6 +57,6 @@ const ProjectsSectionBox: React.FC = () => {
   </Box>
 };
 
-const ProjectsSection = withFullScreen(ProjectsSectionBox);
+const ProjectsSection = withSingleSection(ProjectsSectionBox);
 
 export default ProjectsSection;

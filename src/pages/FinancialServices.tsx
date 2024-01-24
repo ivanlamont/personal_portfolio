@@ -1,8 +1,8 @@
 import { TradingSection } from ".././components/TradingSection";
 import { PrimeBrokerageTopSection, PrimeBrokerageBusinessSection, PrimeBrokerageDetailsSection } from "../components/PrimeBrokerageSection";
-import withColorPage, { ColorPageProps } from "./ColorPage";
+import withMultisectionPage, { PageProps } from "./MultiSectionPage";
 
-const FinancialServicesContent: React.FC<ColorPageProps> = (props) => {
+const FinancialServicesContent: React.FC<PageProps> = (props) => {
     return <>
         <TradingSection {...props} colorIndex={1}  />
         <PrimeBrokerageTopSection {...props} colorIndex={2} />
@@ -11,7 +11,7 @@ const FinancialServicesContent: React.FC<ColorPageProps> = (props) => {
     </>;
 }
 
-const FinancialServices = withColorPage(FinancialServicesContent)
+const FinancialServices = withMultisectionPage(FinancialServicesContent)
 
 export default FinancialServices;
 

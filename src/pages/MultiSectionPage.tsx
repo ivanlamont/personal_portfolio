@@ -3,18 +3,18 @@ import { AlertProvider } from "../context/alertContext";
 
 import React, { useState } from "react";
 
-import Header from ".././components/Header";
-import Footer from ".././components/Footer";
-import Alert from ".././components/Alert";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Alert from "../components/Alert";
 import { ColorThemeContext } from "../context/colorContext";
 
-export interface ColorPageProps {
+export interface PageProps {
     colorSet: string[]
-    colorIndex?: number
+    backgroundImage?: string
 }
 
-export default function withColorPage<P>(Component: React.ComponentType<P>) {
-    return  (props: P & ColorPageProps) => {
+export default function withMultisectionPage<P>(Component: React.ComponentType<P>) {
+    return  (props: P & PageProps) => {
         const [theme, setTheme] = useState<string>('light');
         const toggleTheme = () => {
             setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');

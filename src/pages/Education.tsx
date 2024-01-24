@@ -1,16 +1,16 @@
 import React from "react";
-import withColorPage, { ColorPageProps } from "./ColorPage";
+import withMultisectionPage, { PageProps } from "./MultiSectionPage";
 import EducationSection, { EducationSectionPro, EducationSectionNonTechnical } from "../components/EducationSection";
 
-const EducationContent: React.FC<ColorPageProps> = (props) => {
+const EducationContent: React.FC<PageProps> = (props) => {
     return <>
-      <EducationSection colors={props.colorSet} colorIndex={props.colorIndex?? 1} {...props}/>
-      <EducationSectionPro colors={props.colorSet} colorIndex={props.colorIndex?? 2} {...props}/>
-      <EducationSectionNonTechnical colors={props.colorSet} colorIndex={props.colorIndex?? 3} {...props}/>
+      <EducationSection colorIndex={1} {...props}/>
+      <EducationSectionPro colorIndex={2} {...props}/>
+      <EducationSectionNonTechnical colorIndex={3} {...props}/>
     </>    
 }
 
-const Education = withColorPage(EducationContent)
+const Education = withMultisectionPage(EducationContent)
 
 export default Education;
 

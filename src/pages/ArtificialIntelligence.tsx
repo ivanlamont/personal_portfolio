@@ -1,13 +1,10 @@
 import { Heading, Grid, GridItem, Link, Text, Image } from "@chakra-ui/react";
-import withColorPage, { ColorPageProps } from "./ColorPage";
+import withMultisectionPage, { PageProps } from "./MultiSectionPage";
 import FullScreenSection, { StandardGrid } from "../components/FullScreenSection";
+import { SingleSectionProps } from "../components/withSingleSection";
 
-const AIContentIntro: React.FC<ColorPageProps> = (props) => {
-  return <FullScreenSection
-    
-    backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
-    backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
-  >  
+const AIContentIntro: React.FC<PageProps & SingleSectionProps> = (props) => {
+  return <FullScreenSection {...props} > 
   <StandardGrid>
     <GridItem colSpan={2}>
       <Heading as={"h1"} size={"lg"}>Artificial Intelligence</Heading>
@@ -26,11 +23,8 @@ const AIContentIntro: React.FC<ColorPageProps> = (props) => {
 
 }
 
-const AIContentNext: React.FC<ColorPageProps> = (props) => {
-  return <FullScreenSection
-    backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
-    backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
-  >  
+const AIContentNext: React.FC<PageProps & SingleSectionProps> = (props) => {
+  return <FullScreenSection {...props} >
   <StandardGrid>
     <GridItem>
         <Text>Today, my next challenge will be getting my Masters Degree in AI, through the University of Texas at Austin.  </Text>
@@ -46,12 +40,8 @@ const AIContentNext: React.FC<ColorPageProps> = (props) => {
 
 }
 
-const AIContentTrading: React.FC<ColorPageProps> = (props) => {
-  return <FullScreenSection
-    
-    backgroundTopColor={props.colorSet[(props.colorIndex ?? 1 ) - 1]}
-    backgroundBottomColor={props.colorSet[props.colorIndex ?? 1]}
-  >  
+const AIContentTrading: React.FC<PageProps & SingleSectionProps> = (props) => {
+  return <FullScreenSection {...props} >
   <StandardGrid>
     <GridItem>
         <Text>One area that is seeing an explosion in AI use, is of course financial services.  Algorithmic trading is coming to dominate the market.  In my opinion, one of the most important works on the subject today is a book entitled “Machine Learning for Algorithmic Trading” by Stefan Jansen.  This is a beast of a book.   There’s nothing left out.  I’m applying the lessons learnt, and it has changed my perspective on the entire field of ML4T.  Very highly recommended for anyone interested in the subject – if you have the diligence to get through it!</Text>
@@ -74,14 +64,14 @@ const AIContentTrading: React.FC<ColorPageProps> = (props) => {
 
 }
 
-const AIContent: React.FC<ColorPageProps> = (props) => {
+const AIContent: React.FC<PageProps> = (props) => {
   return <>
-    <AIContentIntro colorIndex={props.colorIndex?? 1} {...props}/>
-    <AIContentNext colorIndex={props.colorIndex?? 2} {...props}/>
-    <AIContentTrading colorIndex={props.colorIndex?? 3} {...props}/>
+    <AIContentIntro colorIndex={1} {...props}/>
+    <AIContentNext colorIndex={2} {...props}/>
+    <AIContentTrading colorIndex={3} {...props}/>
   </>    
 }
 
-const ArtificialIntelligence = withColorPage(AIContent);
+const ArtificialIntelligence = withMultisectionPage(AIContent);
 
 export default ArtificialIntelligence;

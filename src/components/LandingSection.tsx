@@ -1,6 +1,6 @@
 import React from "react";
 import {Text, Grid, GridItem, Image } from "@chakra-ui/react";
-import withFullScreen from "./withFullScreen";
+import withSingleSection from "./withSingleSection";
 import { SpringIn } from "./SpringIn";
 
 const bio1 = "I first got my hands on a computer back in the 20th century.  ";
@@ -17,6 +17,7 @@ const LandingSectionGrid: React.FC = () => {
       templateRows='repeat(3, 1fr)'
       templateColumns='repeat(2, 1fr)'
       gap={2}
+      color="white" 
     >
       <GridItem colSpan={1} >
         <SpringIn>
@@ -42,7 +43,7 @@ const LandingSectionGrid: React.FC = () => {
     </Grid>
 };
 
-const LandingSection = withFullScreen(LandingSectionGrid);
+const LandingSection = withSingleSection(LandingSectionGrid);
   
 export default LandingSection;
 
