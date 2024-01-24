@@ -74,9 +74,9 @@ function ColorApp(colorList: ColorScheme) {
           <Route path="/Education" element={<Education colorSet={colorList.ed} />}></Route>
           <Route path="/Mobile" element={<MobilePage colorSet={colorList.mobile}  />}></Route>
           <Route path="/Manager" element={<ManagerPage colorSet={colorList.management} />}></Route>
-          <Route path="/Principles" element={<Technologies colorSet={colorList.principles} sourceFile="./principles.json" sectionName={''} data={[]} />}></Route>
-          <Route path="/Languages" element={<Technologies colorSet={colorList.languages} sourceFile="./languages.json" sectionName={''} data={[]} />}></Route>
-          <Route path="/Tech" element={<Technologies colorSet={colorList.tech} sourceFile="./tech.json" sectionName={''} data={[]} />}></Route>
+          <Route path="/Principles" element={<Technologies colorSet={colorList.principles} sourceFile="./principles.json" />}></Route>
+          <Route path="/Languages" element={<Technologies colorSet={colorList.languages} sourceFile="./languages.json"  />}></Route>
+          <Route path="/Tech" element={<Technologies colorSet={colorList.tech} sourceFile="./tech.json"  />}></Route>
           <Route path="/About" element={<AboutPage colorSet={colorList.about} />}></Route>
       </Routes>
     </Router>    
