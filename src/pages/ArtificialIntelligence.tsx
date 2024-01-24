@@ -1,4 +1,4 @@
-import { Heading, Grid, GridItem, Link, Text, Image } from "@chakra-ui/react";
+import { Heading, Grid, GridItem, Link, Text, Image, Box, Flex, VStack } from "@chakra-ui/react";
 import withMultisectionPage, { PageProps } from "./MultiSectionPage";
 import FullScreenSection, { StandardGrid } from "../components/FullScreenSection";
 import { SingleSectionProps } from "../components/withSingleSection";
@@ -65,11 +65,19 @@ const AIContentTrading: React.FC<PageProps & SingleSectionProps> = (props) => {
 }
 
 const AIContent: React.FC<PageProps> = (props) => {
-  return <>
-    <AIContentIntro colorIndex={1} {...props}/>
-    <AIContentNext colorIndex={2} {...props}/>
-    <AIContentTrading colorIndex={3} {...props}/>
-  </>    
+
+  return <VStack>
+    <AIContentIntro  {...props} colorIndex={1}/>
+    <AIContentNext  {...props} colorIndex={2}/>
+    <AIContentTrading  {...props} colorIndex={3} />
+  </VStack>    
+
+
+  // return <Flex p={18} width={'1fr'} alignContent={'center'}>
+  //   <AIContentIntro colorIndex={1} {...props}/>
+  //   <AIContentNext colorIndex={2} {...props}/>
+  //   <AIContentTrading colorIndex={3} {...props}/>
+  // </Flex>    
 }
 
 const ArtificialIntelligence = withMultisectionPage(AIContent);

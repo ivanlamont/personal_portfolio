@@ -28,23 +28,6 @@ type ColorScheme = {
   about: string[];
 }
 
-function flipColor(color: string): chroma.Color {
-  if (chroma(color).luminance() > 0.5)
-    return chroma(color).darken(2);
-  else
-    return chroma(color).brighten(2);
-}
-
-function flipScheme(colorList: ColorScheme) {
-  const newColorList = {} as ColorScheme;
-  Object.entries(colorList).forEach(([key, value]) => {
-    value.forEach((color, index) => { 
-      newColorList[key][index] = flipColor(color).hex();
-    });
-  });
-  return newColorList
-}
-
 function App() {
   const [colorList, setColorList] = useState<ColorScheme>({} as ColorScheme);
   const [colorTheme] = useState('light');
@@ -66,21 +49,41 @@ function App() {
 
 function ColorApp(colorList: ColorScheme) {
   return (
+    <>
     <Router>
       <Routes >
           <Route path="/" element={<MainPage colorSet={colorList.landing} />}></Route>
           <Route path="/FinancialServices" element={<FinancialServices colorSet={colorList.finance} />}></Route>
-          <Route path="/ArtificialIntelligence" element={<ArtificialIntelligence colorSet={colorList.ai} />}></Route>
-          <Route path="/Education" element={<Education colorSet={colorList.ed} />}></Route>
+          <Route path="/ArtificialIntelligence" element={<ArtificialIntelligence colorSet={colorList.ai}/>}></Route>
+          <Route path="/Education" element={<Education colorSet={colorList.ed} fadedBackground='./graduation.jpg' />}></Route>
           <Route path="/Mobile" element={<MobilePage colorSet={colorList.mobile}  />}></Route>
-          <Route path="/Manager" element={<ManagerPage colorSet={colorList.management} />}></Route>
+          <Route path="/Manager" element={<ManagerPage colorSet={colorList.management} fadedBackground='./handshake.jpg' />}></Route>
           <Route path="/Principles" element={<Technologies colorSet={colorList.principles} sourceFile="./principles.json" />}></Route>
           <Route path="/Languages" element={<Technologies colorSet={colorList.languages} sourceFile="./languages.json"  />}></Route>
           <Route path="/Tech" element={<Technologies colorSet={colorList.tech} sourceFile="./tech.json"  />}></Route>
           <Route path="/About" element={<AboutPage colorSet={colorList.about} />}></Route>
       </Routes>
-    </Router>    
+    </Router>  
+    </>
   );
+}
+
+
+function flipColor(color: string): chroma.Color {
+  if (chroma(color).luminance() > 0.5)
+    return chroma(color).darken(2);
+  else
+    return chroma(color).brighten(2);
+}
+
+function flipScheme(colorList: ColorScheme) {
+  const newColorList = {} as ColorScheme;
+  Object.entries(colorList).forEach(([key, value]) => {
+    value.forEach((color, index) => { 
+      newColorList[key][index] = flipColor(color).hex();
+    });
+  });
+  return newColorList
 }
 
 export default App;

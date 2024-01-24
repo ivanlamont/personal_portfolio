@@ -1,6 +1,6 @@
 import withMultisectionPage, { PageProps } from "../pages/MultiSectionPage";
 import FullScreenSection, { StandardGrid } from "./FullScreenSection";
-import { Heading, Text, Image, Grid, GridItem, Link  } from "@chakra-ui/react";
+import { Heading, Text, Image, Grid, GridItem, Link, VStack  } from "@chakra-ui/react";
 import { SingleTechBoxProps, SingleTechBox } from "./SingleTechBox";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -36,15 +36,17 @@ function withJsonSource<P>(Component: React.ComponentType<P & FileSectionProps>)
 
 const TechnologiesContent: React.FC<TechnologiesProps & PageProps & FileSectionProps> = (props) => { 
   const techData = props as FileSectionProps
-  return <FullScreenSection {...props} >
-      <StandardGrid>
-      {techData.data.map((technology) => (
-          <GridItem>
-            <SingleTechBox {...technology} image={"./" + technology.image} />
-          </GridItem>
-        ))}
-      </StandardGrid>  
-  </FullScreenSection>
+  return <VStack>
+    <FullScreenSection {...props} >
+        <StandardGrid>
+        {techData.data.map((technology) => (
+            <GridItem>
+              <SingleTechBox {...technology} image={"./" + technology.image} />
+            </GridItem>
+          ))}
+        </StandardGrid>  
+    </FullScreenSection>
+  </VStack> 
 };
 
 const Technologies = withMultisectionPage(withJsonSource(TechnologiesContent))

@@ -1,4 +1,4 @@
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, Box } from "@chakra-ui/react";
 import { AlertProvider } from "../context/alertContext";
 
 import React, { useState } from "react";
@@ -10,7 +10,7 @@ import { ColorThemeContext } from "../context/colorContext";
 
 export interface PageProps {
     colorSet: string[]
-    backgroundImage?: string
+    fadedBackground?: string
 }
 
 export default function withMultisectionPage<P>(Component: React.ComponentType<P>) {
@@ -24,7 +24,7 @@ export default function withMultisectionPage<P>(Component: React.ComponentType<P
                 <ChakraProvider >
                     <AlertProvider>
                         <main>
-                            <Header />
+                            <Header/>
                             <ColorThemeContext.Provider value={{ theme, toggleTheme }}>
                                 <Component {...props} />
                             </ColorThemeContext.Provider>

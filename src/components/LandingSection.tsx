@@ -37,8 +37,8 @@ const LandingSectionGrid: React.FC = () => {
         <Text as='i' fontSize={blurb_font}>{bio_brackets}</Text>
         <Text fontSize={blurb_font}>{bio2}</Text>
       </GridItem>
-      <GridItem as='u' colSpan={1} marginTop="55px" >
-        <Text as='kbd' fontSize="26px">SCROLL FOR MORE</Text>        
+      <GridItem as='u' colSpan={1} color="GrayText" marginTop="55px" >
+        <Text as='kbd' fontSize="20px">SCROLL FOR MORE</Text>        
       </GridItem>      
     </Grid>
 };

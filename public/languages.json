@@ -10,15 +10,6 @@
       "score": 9.5
     },
     {
-      "title": "C#",
-      "image": "c-sharp.svg",
-      "description": "I used C# the day version 1.0 was released and I've sworn by it since. It's everything C was intended to become. With .NET Core now, it's one of the fastest languages out there, and I can't think of much you cannot do with it. It lends itself to good design and application structure, it's very widely adopted and it has a great future ahead of it. 10/10",
-      "usageHistory": "Daily since version 1.0, I guess that's over two solid decades now!",
-      "footer": "Incredible",
-      "confidenceLevel": 10,
-      "score": 9.5
-    },
-    {
       "title": "C++",
       "image": "c-plusplus.svg",
       "description": "For low-level low-latency applications that must be close to the metal, C++ is the way to go.  It has a reputation as an ugly language but I still love it, it's like the grandmother of all that came after it.  Yes, it has higher overheads than many other languages and you gotta be careful with it.  And the standard library could do with some extension.  And when are we going to get reflection? Still, though - if you have to go down there, do it with C++",
@@ -28,17 +19,26 @@
       "footer": "The Grand Old Lady of Code"
     },
     {
-        "title": "ReactJS",
-        "footer": "Okay, I guess",
-        "description": "It's powerful and I love the amazing results we can get with it.  Indeed, this website itself was built with ReactJS and TypeScript. There are a lot of developers available to support it, but still there are some unavoidable conclusions when you get used to it.  All the rules, for hooks, for side effects, etc - all these are there because at the end of the day, this is Javascript, and everything is a function. ReactJS is good, but in my opinion, Blazor is a lot better",
-        "usageHistory": "I've used ReactJS since 2019.  ",
-        "confidenceLevel": 7.5,
-        "score": 6.5,
-        "source": "https://github.com/ivanlamont/personal_portfolio",
-        "image": "react.png"
-      }  
+      "title": "C#",
+      "image": "c-sharp.svg",
+      "description": "I used C# the day version 1.0 was released and I've sworn by it since. It's everything C was intended to become. With .NET Core now, it's one of the fastest languages out there, and I can't think of much you cannot do with it. It lends itself to good design and application structure, it's very widely adopted and it has a great future ahead of it. 10/10",
+      "usageHistory": "Daily since version 1.0, I guess that's over two solid decades now!",
+      "footer": "Incredible",
+      "confidenceLevel": 10,
+      "score": 9.5
+    }
   ],
   "more languages": [
+    {
+      "title": "ReactJS",
+      "footer": "Not for the Uninitiated",
+      "description": "It's powerful and I love the amazing results we can get with it.  Indeed, this website itself was built with ReactJS and TypeScript. There are a lot of developers available to support it, and the library support is truly excellent.  Material UI and Chakra UI are both powerful and beautiful.  On the negative side, there still are some unavoidable conclusions when you get deep into it.  All the rules, for hooks, for side effects, etc - all these are there because at the end of the day, this is Javascript, and in JS everything is a function. ReactJS is good, but in my opinion, it has a high learning curve.  Not for beginners!",
+      "usageHistory": "I've used ReactJS since 2019.  I continue to use it today although I also play around with Blazor.  Personally, I prefer Blazor, but ReactJS is still a top class professional web development framework.",
+      "confidenceLevel": 7.5,
+      "score": 7.5,
+      "source": "https://github.com/ivanlamont/personal_portfolio",
+      "image": "react.png"
+    },
     {
       "title": "SQL",
       "image": "sql.png",
@@ -58,7 +58,9 @@
       "confidenceLevel": 8.5,
       "score": 8,
       "footer": "Tries to be everything to everyone"
-    },
+    }
+  ],
+  "even more languages": [
     {
       "title": "Kotlin",
       "image": "kotlin.png",
@@ -69,35 +71,35 @@
       "footer": "Modern and Powerful"
     },
     {
-        "title": ".NET Core",
-        "image": "dotnet.svg",
-        "description": "Fast, clean, open - and everything from the command line.  By far the best thing to come out of Microsoft in the last ten years or more.  My platform of choice for medium to large scale applications",
-        "usageHistory": "Since 2012",
-        "confidenceLevel": 9.0,
-        "score": 9.5,
-        "footer": "Excellent - The Future"
-      }  
-  ],
-  "even more languages": [
-    {
-      "title": ".NET Framework",
-      "image": "dotnet.svg",
-      "description": "When this came out at the start of the century I was impressed, although it took time to figure out why we were backing away from DLLs and OCXs and restarting the ecosystem.  Fast forward to the current era, this old framework looks tired, but it led to .NET Core.  I enjoyed using it, built many websites and Windows apps with it, but it's day is done",
-      "footer": "A good idea for its time"
-    },
-    {
       "title": "TypeScript",
       "image": "typescript.png",
       "description": "Javascript has so many shortcomings. One of the worst is that it has no type safety, and so TypeScript really helps to make it a lot more usable.  I've used it for ReactJS and NodeJS apps, and while I appreciate its strengths, it still leaves us with.. JavaScript.  So TypeScript is a great bandage, but it's not a cure.",
       "footer": "A good idea but it's not Blazor"
     },
     {
-        "title": "PostgreSQL",
-        "image": "postgresql.svg",
-        "description": "RDBMS engine, stripped down to the bare metal.  Very very fast - although significantly less easy to use than its competitors.  I wish it had more support for business logic, it's far better though to use it simply as a store of data and have all logic implemented above it.",
-        "confidenceLevel": 7.5,
-        "score": 9,
-        "footer": "Formula-1 of Databases"
+      "title": ".NET Core",
+      "image": "dotnet.svg",
+      "description": "Fast, clean, open - and everything from the command line.  By far the best thing to come out of Microsoft in the last ten years or more.  My platform of choice for medium to large scale applications",
+      "usageHistory": "Since 2012",
+      "confidenceLevel": 9.0,
+      "score": 9.5,
+      "footer": "Excellent - The Future"
+    },
+    {
+      "title": ".NET Framework",
+      "image": "dotnet.svg",
+      "description": "When this came out at the start of the century I was impressed, although it took time to figure out why we were backing away from DLLs and OCXs and restarting the ecosystem.  Fast forward to the current era, this old framework looks tired, but it led to .NET Core.  I enjoyed using it, built many websites and Windows apps with it, but it's day is done",
+      "footer": "A good idea for its time"
+    }
+  ],
+  "yet more languages": [
+    {
+      "title": "PostgreSQL",
+      "image": "postgresql.svg",
+      "description": "RDBMS engine, stripped down to the bare metal.  Very very fast - although significantly less easy to use than its competitors.  I wish it had more support for business logic, it's far better though to use it simply as a store of data and have all logic implemented above it.",
+      "confidenceLevel": 7.5,
+      "score": 9,
+      "footer": "Formula-1 of Databases"
     },
     {
       "title": "jQuery",
@@ -137,6 +139,5 @@
       "description": "It has its uses and VB made it live far longer than necessary.  I used it a fair bit - but I'm glad it complies to MSIL so that you can easily use (i.e. replace) it with C#",
       "footer": "Ancient"
     }
-
   ]
 }

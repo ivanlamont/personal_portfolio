@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Grid, StackProps, VStack } from "@chakra-ui/react";
+import { Box, Grid, StackProps, VStack } from "@chakra-ui/react";
 import chroma from "chroma-js";
 import { PageProps } from "../pages/MultiSectionPage";
 import { SingleSectionProps } from "./withSingleSection";
@@ -31,22 +31,11 @@ export function getTextColor( color1: string, color2: string ) {
 }
 
 const FullScreenSection = ( props: PageProps | StackProps | SingleSectionProps ) => {
-  const page = props as PageProps
-  const section = props as SingleSectionProps
   const data = props as FullScreenSectionData
   const boxProps = props as StackProps
-  const backgroundTopColor = page.colorSet[(section.colorIndex ?? 1 ) - 1]
-  const backgroundBottomColor= page.colorSet[section.colorIndex ?? 1]
-  const grad = 'linear(to-b, ' + backgroundTopColor + ', ' + backgroundBottomColor + ')';
-  const textColor = getTextColor(backgroundTopColor, backgroundBottomColor)
-  return  <VStack
-      bgGradient={grad}
-      color={textColor}
-    >
-      <VStack maxWidth="1280px" minHeight="100vh" {...boxProps}>
-        {data.children}
-      </VStack>
-    </VStack>
+  return <VStack maxWidth="1280px" minHeight="100vh" {...boxProps}>
+            {data.children}
+          </VStack>
 }
 
 export default FullScreenSection;
