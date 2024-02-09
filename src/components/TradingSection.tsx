@@ -33,7 +33,7 @@ const Conifer: React.FC = () => (
 const Latency: React.FC = () => (
   <Box>
     <Heading as={heading_type} size={heading_size}>Trade Execution Latency</Heading>
-    <Text>Modern trading technology relies greatly on low latency connectivity to the market, in order to ensure systems have the most accurate data on the current market order book, and hit the best prices for every trade.  For this reason, C++ has often been chosen as the language of choice, indeed some claim it is the only choice, for trade execution code to be written in.    </Text>
+    <Text>Modern trading technology relies greatly on low latency connectivity to the market, in order to ensure systems have the most accurate data on the current market order book, and hit the best prices for every trade.  For this reason, C++ has often been chosen as the language of choice, indeed some claim it is the only choice, for trade execution code to be written in, because the smart kids know how to make a FPGA card act like a network card that has been primed to fire off trading messages before the data even reaches the CPU.    </Text>
   </Box>
 );
 

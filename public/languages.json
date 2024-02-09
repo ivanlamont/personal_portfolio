@@ -13,7 +13,7 @@
       "title": "C++",
       "image": "c-plusplus.svg",
       "description": "For low-level low-latency applications that must be close to the metal, C++ is the way to go.  It has a reputation as an ugly language but I still love it, it's like the grandmother of all that came after it.  Yes, it has higher overheads than many other languages and you gotta be careful with it.  And the standard library could do with some extension.  And when are we going to get reflection? Still, though - if you have to go down there, do it with C++",
-      "usageHistory": "Started mid 1980s, used professionally for UI development in '92, came back to it at Robbie Stevens in the late 90s, used it building a high speed trading system and user interface.  Now I'd only use it for low-latency work, or on a Raspberry Pi.",
+      "usageHistory": "Started mid 1980s, used professionally for UI development in '92, came back to it at Robbie Stevens in the late 90s, used it building a high speed trading system and user interface.  Now I'd only use it for low-latency work, or on proprietary hardware like FPGA cards, Arduino, or Raspberry Pi.",
       "confidenceLevel": 7,
       "score": 7,
       "footer": "The Grand Old Lady of Code"
