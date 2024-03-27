@@ -68,7 +68,8 @@
       "usageHistory": "As soon as Google brought in support for Kotlin into Android Studio, I started using it.  Quite a lot of my Android code is now written in Kotlin.  I don't use it every day but it's so readable, it's easy to jump right back into it",
       "confidenceLevel": 8.5,
       "score": 7.5,
-      "footer": "Modern and Powerful"
+      "footer": "Modern and Powerful",
+      "source": "https://github.com/ivanlamont/cardiocareful"
     },
     {
       "title": "TypeScript",
