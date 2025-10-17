@@ -13,11 +13,13 @@ const heading_type = "h3"
 const heading_size = "md"
 
 const Intro: React.FC = () => (
-    <Box>
-      {/* <Avatar size='2xl' name='Ivan J. Lamont' src={require("../images/self_small.jpg")} /> */}
-      <Heading as={heading_type} size={heading_size}>Extracurricular Activities</Heading>
-      <Text></Text>
-    </Box>
+    <Center>
+      <Box textAlign="center">
+        {/* <Avatar size='2xl' name='Ivan J. Lamont' src={require("../images/self_small.jpg")} /> */}
+        <Heading as={heading_type} size={heading_size}>Extracurricular Activities</Heading>
+        <Text></Text>
+      </Box>
+    </Center>
   );
 
 const Pilot: React.FC = () => (
@@ -94,7 +96,7 @@ const Referee: React.FC = () => (
 const AboutFlying: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
   return <FullScreenSection {...props} >  
     <StandardGrid>
-      <GridItem colSpan={2}>
+      <GridItem colSpan={1}>
         <Intro />
       </GridItem>
       <GridItem>

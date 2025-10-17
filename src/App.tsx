@@ -6,11 +6,11 @@ import MainPage from './pages/MainPage';
 import AboutPage from "./pages/AboutPage";
 import Education from './pages/Education';
 import { Heading } from '@chakra-ui/react';
-import axios from 'axios';
 import { useState, useEffect } from 'react';
 import chroma from "chroma-js";
 import Technologies from './components/TechnologiesSection';
 import ManagerPage from './pages/ManagerPage';
+import axios from 'axios';
 
 const colorschemes_json = './colorschemes.json'
 
@@ -39,6 +39,7 @@ function App() {
     .catch(err=>console.log('color scheme load error=>',err))
   },[]);
 
+  
   if (Object.keys(colorList).length == 0)
     return <Heading color="white">Loading...</Heading>
   else {

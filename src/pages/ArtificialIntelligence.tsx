@@ -2,6 +2,7 @@ import { Heading, Grid, GridItem, Link, Text, Image, Box, Flex, VStack } from "@
 import withMultisectionPage, { PageProps } from "./MultiSectionPage";
 import FullScreenSection, { StandardGrid } from "../components/FullScreenSection";
 import { SingleSectionProps } from "../components/withSingleSection";
+import { render } from "@testing-library/react";
 
 const AIContentIntro: React.FC<PageProps & SingleSectionProps> = (props) => {
   return <FullScreenSection {...props} > 

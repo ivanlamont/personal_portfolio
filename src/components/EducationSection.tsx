@@ -12,15 +12,11 @@ const EducationSectionTopBox: React.FC<PageProps | SingleSectionProps> = (props:
             <Heading as={"h1"} size={"lg"}>Educating Ivan</Heading>
             </GridItem>
             <GridItem>
-            <Text>I received my primary degree from <Link href="https://www.tcd.ie/" target="_blank">Trinity College Dublin</Link>, in the early 1990s.  I studied <Link href="https://www.tcd.ie/scss/courses/undergraduate/computer-science/" target="_blank">Computer Science</Link>, which was a very small niche specialization at the time.  There were 30 in my class.  I considered staying on, after graduation, to get a Masters Degree, but there were too many lucrative jobs on offer, so I bade farewell to academia for the time being, and jumped into the world of financial services.
+            <Text>I received my primary degree and my Masters from <Link href="https://www.tcd.ie/" target="_blank">Trinity College Dublin</Link>, in the early 1990s.  I studied <Link href="https://www.tcd.ie/scss/courses/undergraduate/computer-science/" target="_blank">Computer Science</Link>, which was a very small niche specialization at the time.  There were 30 in my class.  I considered staying on, to do a PhD, but there were too many lucrative jobs on offer, so I bade farewell to academia for the time being, and jumped into the world of financial services.
             </Text>
             <Image src={require("../images/trinity.jpg")} alt="Trinity College Dublin" />
             </GridItem>
-            <GridItem>
-                <Text>My next steps, I anticipate I will graduate from University of Texas at Austin, after completing their <Link href="https://cdso.utexas.edu/msai" target="_blank">Masters in Artificial Intelligence</Link> course.  It looks to be one of the best courses in the world, and I am very excited about the prospect what opportunities will open up after graduation.
-                </Text>        
-                <Image src={require("../images/UT-austin.jpg")} alt="University of Texas at Austin" />
-            </GridItem>
+
         </StandardGrid>
     </FullScreenSection>;
 };
