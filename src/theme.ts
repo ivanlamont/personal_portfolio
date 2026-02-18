@@ -2,8 +2,8 @@ import { extendTheme } from "@chakra-ui/react";
 
 export const layoutTokens = {
   sectionMaxW: "80rem",
-  sectionPaddingX: { base: 4, sm: 6, md: 8, lg: 10 },
-  sectionPaddingTop: { base: 24, md: 28 },
+  sectionPaddingX: { base: 6, sm: 8, md: 10, lg: 12 },
+  sectionPaddingTop: { base: 28, md: 32 },
   sectionPaddingBottom: { base: 10, md: 12 },
 };
 

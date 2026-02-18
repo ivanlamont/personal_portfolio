@@ -1,20 +1,26 @@
 import React from "react";
 import withSingleSection, { SingleSectionProps } from "./withSingleSection";
-import { Box, Grid, GridItem, Heading, Text, Image, Link, VStack } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading, Text, Image, VStack } from "@chakra-ui/react";
 import FullScreenSection, { StandardGrid } from "./FullScreenSection";
 import { PageProps } from "../pages/MultiSectionPage";
 import { ResponsiveImage } from "./ResponsiveMedia";
+import { Flink } from "./Flink";
+import ContentCard from "./ContentCard";
 
 const EducationSectionTopBox: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
     return <FullScreenSection {...props} >  
         <StandardGrid>
             <GridItem colSpan={{ base: 1, lg: 2 }}>
-            <Heading as={"h1"} size={"lg"}>Educating Ivan</Heading>
+              <ContentCard>
+                <Heading as={"h1"} size={"lg"}>Educating Ivan</Heading>
+              </ContentCard>
             </GridItem>
             <GridItem>
-            <Text>I received my primary degree and my Masters from <Link href="https://www.tcd.ie/" target="_blank">Trinity College Dublin</Link>, in the early 1990s.  I studied <Link href="https://www.tcd.ie/scss/courses/undergraduate/computer-science/" target="_blank">Computer Science</Link>, which was a very small niche specialization at the time.  There were 30 in my class.  I considered staying on, to do a PhD, but there were too many lucrative jobs on offer, so I bade farewell to academia for the time being, and jumped into the world of financial services.
-            </Text>
-            <ResponsiveImage src={require("../images/trinity.jpg")} alt="Trinity College Dublin" />
+              <ContentCard>
+                <Text>I received my primary degree and my Masters from <Flink url="https://www.tcd.ie/" text="Trinity College Dublin" />, in the early 1990s. I studied <Flink url="https://www.tcd.ie/scss/courses/undergraduate/computer-science/" text="Computer Science" />, which was a very small niche specialization at the time. There were 30 in my class. I considered staying on, to do a PhD, but there were too many lucrative jobs on offer, so I bade farewell to academia for the time being, and jumped into the world of financial services.
+                </Text>
+                <ResponsiveImage maxW={{ base: "16rem", md: "22rem" }} mx="auto" src={require("../images/trinity.jpg")} alt="Trinity College Dublin" />
+              </ContentCard>
             </GridItem>
 
         </StandardGrid>
@@ -25,12 +31,16 @@ const EducationSectionProfessionalQualificationsBox: React.FC<PageProps | Single
     return <FullScreenSection {...props} >
         <StandardGrid>
             <GridItem>
-                <Text>Certified Tensorflow Developer</Text>
-                <ResponsiveImage src={require("../images/tensorflow-cert.png")} alt="Tensorflow Developer Certification" />
+                <ContentCard>
+                  <Text>Certified Tensorflow Developer</Text>
+                  <ResponsiveImage maxW={{ base: "16rem", md: "22rem" }} mx="auto" src={require("../images/tensorflow-cert.png")} alt="Tensorflow Developer Certification" />
+                </ContentCard>
             </GridItem>
             <GridItem>
-                <Text>AWS Certified Cloud Practitioner</Text>
-                <ResponsiveImage src={require("../images/AWS_certification.png")} alt="AWS Certified Cloud Practitioner" />
+                <ContentCard>
+                  <Text>AWS Certified Cloud Practitioner</Text>
+                  <ResponsiveImage maxW={{ base: "16rem", md: "22rem" }} mx="auto" src={require("../images/AWS_certification.png")} alt="AWS Certified Cloud Practitioner" />
+                </ContentCard>
             </GridItem>
         </StandardGrid>
     </FullScreenSection>;
@@ -45,16 +55,22 @@ const EducationSectionNonTechnicalQualificationsBox: React.FC<PageProps | Single
             alignItems="start"
         >
             <GridItem>
-                <Text>In addition, there are a few non-technical things that I am passionate about, and have Qualifications in.  Such as...              
-                </Text>        
+                <ContentCard>
+                  <Text>In addition, there are a few non-technical things that I am passionate about, and have Qualifications in.  Such as...              
+                  </Text>
+                </ContentCard>
             </GridItem>
             <GridItem>
-                <Text>FAA Commercial Pilot / Instrument Rating</Text>
-                <ResponsiveImage src={"faa.jpg"} alt="FAA Commercial Pilot" maxH={"300px"} />
+                <ContentCard>
+                  <Text>FAA Commercial Pilot / Instrument Rating</Text>
+                  <ResponsiveImage src={"faa.jpg"} alt="FAA Commercial Pilot" maxW={{ base: "16rem", md: "22rem" }} mx="auto" />
+                </ContentCard>
             </GridItem>
             <GridItem>
-                <Text>California Notary Public</Text>
-                <ResponsiveImage src={"./notary.jpg"} alt="Notary" maxH={"300px"} />
+                <ContentCard>
+                  <Text>California Notary Public</Text>
+                  <ResponsiveImage src={"./notary.jpg"} alt="Notary" maxW={{ base: "16rem", md: "22rem" }} mx="auto" />
+                </ContentCard>
             </GridItem>
         </Grid>
     </FullScreenSection>;

@@ -5,91 +5,97 @@ import { PageProps } from "../pages/MultiSectionPage";
 import { Flink } from "./Flink";
 import { SingleSectionProps } from "./withSingleSection";
 import { ResponsiveImage, ResponsiveYouTube } from "./ResponsiveMedia";
+import ContentCard from "./ContentCard";
 
 const yt_flying = "0SvEWnMtX-A"
 const yt_landing = "napcu2KH5EU";
 
 const heading_type = "h3"
 const heading_size = "md"
+const mediaMaxW = { base: "16rem", md: "22rem" };
 
 const Intro: React.FC = () => (
-    <Center>
+    <ContentCard>
       <Box textAlign="center">
         {/* <Avatar size='2xl' name='Ivan J. Lamont' src={require("../images/self_small.jpg")} /> */}
         <Heading as={heading_type} size={heading_size}>Extracurricular Activities</Heading>
         <Text></Text>
       </Box>
-    </Center>
+    </ContentCard>
   );
 
 const Pilot: React.FC = () => (
-<GridItem>
+<ContentCard>
     <Heading as={heading_type} size={heading_size}>Flying</Heading>
     <Text>As a young lad growing up in Ireland, I always wanted to become a pilot.</Text>
-    <ResponsiveImage mt={2} maxH="200px" src={require("../images/aviation.jpg")} alt="Flying" />
+    <ResponsiveImage mt={2} maxW={mediaMaxW} mx="auto" src={require("../images/aviation.jpg")} alt="Flying" />
     <Text>Unfortunately, <Flink url="https://www.aerlingus.com" text="Aer Lingus" /> were never hiring, so I decided to follow my passion for computer programming instead.  When I moved to America, I spent some of my spare time learning to fly out of <Flink url="https://www.oaklandairport.com/" text="Oakland" />.  So far I have earned my FAA Commercial Pilot license with an Instrument Rating.  I plan on getting my Certified Flight Instructor cert before the decade is out</Text>
-</GridItem>
+</ContentCard>
 );
 
 const FlightReview: React.FC = () => (
-  <GridItem>
+  <ContentCard>
       <Text>Every two years we have to do a Biannual Flight Review with an instructor</Text>
-      <ResponsiveYouTube videoId={yt_flying} title="Biannual flight review" />
+      <Box maxW={mediaMaxW} mx="auto">
+        <ResponsiveYouTube videoId={yt_flying} title="Biannual flight review" />
+      </Box>
       <Text>I decided to have a little fun, on this one - back to where it all began, into Oakland International, the north complex.  The runways have been renumbered as 28L and 28R now.  I first flew solo from 27R, I feel like they took it away from me!</Text>
-  </GridItem>
+  </ContentCard>
   );
 
 const Landing: React.FC = () => (
-  <GridItem>
+  <ContentCard>
       <Text>Landing a C-172 at Petaluma</Text>
-      <ResponsiveYouTube videoId={yt_landing} title="Landing a C-172 in Petaluma" />
+      <Box maxW={mediaMaxW} mx="auto">
+        <ResponsiveYouTube videoId={yt_landing} title="Landing a C-172 in Petaluma" />
+      </Box>
       <Text>My son did a pretty good job with the camera, I think</Text>
-  </GridItem>
+  </ContentCard>
   );
   
 const GuitarBuilder: React.FC = () => (
-  <GridItem>
+  <ContentCard>
       <Heading as={heading_type} size={heading_size}>Guitar Building</Heading>
       <Text>Rock & Roll has to come from somewhere, right?  I've made a few electric guitars, and I am in the process of making a few more.  This video shows the neck being shaped for one of the three replicas that I am making of the 1976 Gibson Explorer.  The wood is mahogany.  I plan to give one of each of these to my sons, when the time is right.</Text>
-  </GridItem>
+  </ContentCard>
 );
 
 const RingZero: React.FC = () => (
-  <GridItem>
+  <ContentCard>
       <Heading as={heading_type} size={heading_size}>Rock & Roll</Heading>
       <Text>For a number of years, I was the lead singer and lead guitarist for Ring Zero.  </Text>
-      <ResponsiveImage src={require("../images/ring-zero.png")} alt="Ring Zero band photo" />
+      <ResponsiveImage maxW={mediaMaxW} mx="auto" src={require("../images/ring-zero.png")} alt="Ring Zero band photo" />
       <Text>It's hard to beat the thrill of playing guitar at full volume for a crowd - the adrenaline is incredible.  We played a few memorable shows, and I sometimes dream about "getting the band back together"!</Text>
-  </GridItem>
+  </ContentCard>
 );
 
 const ManchesterUnited: React.FC = () => (
-  <GridItem>
+  <ContentCard>
       <Heading as={heading_type} size={heading_size}>Glory, Glory...</Heading>
       <Text>Mecca for any <Flink url="https://www.manchesterunited.com/" text="Manchester United" /> fan is Old Trafford.  I've been there several times, and one day I hope to bring my three sons too.  Although one of them is, sadly, a Chelsea fan! </Text>
-      <Center><ResponsiveImage src={require("../images/old-trafford.avif")} alt="Old Trafford" />  </Center>
+      <Center><ResponsiveImage maxW={mediaMaxW} src={require("../images/old-trafford.avif")} alt="Old Trafford" />  </Center>
       <Text>Like most United fans, I remember so fondly the days of Sir Alex Ferguson - we hope some day to see a manager half as good at the helm!</Text>
-  </GridItem>
+  </ContentCard>
 );
 
 
 const ChessPlayer: React.FC = () => (
-  <GridItem>
+  <ContentCard>
       <Heading as={heading_type} size={heading_size}>Chess</Heading>
       <Text>I love Chess, I play a little every day.  I've had a rating of 1900 before, but it takes a heck of a lot of practice to remain at the top of your game, and right now I'm pretty busy!</Text>
       <Center>
-        <ResponsiveImage maxH="420px" src={require("../images/chess.jpg")} alt="Chess board" alignContent={"center"} />
+        <ResponsiveImage maxW={mediaMaxW} src={require("../images/chess.jpg")} alt="Chess board" alignContent={"center"} />
       </Center>
       <Text>I'm a d4 player.  None of this kings-pawn complications for me.  A nice open game please.  I know the <Flink url="https://www.amazon.com/s?k=Meran-Anti-Meran-Variations-Alexey-Dreev" text="Meran and Anti-Meran variations" /> and the Moscow quite well, be warned!  If you'd like to play me, the link to my chess.com account is in the header.</Text>
-  </GridItem>
+  </ContentCard>
   );
       
 const Referee: React.FC = () => (
-  <GridItem>
+  <ContentCard>
       <Heading as={heading_type} size={heading_size}>Refereeing</Heading>
       <Text>I've been a <Flink url="https://www.ussoccer.com/referee-program" text="licensed soccer referee" /> since 2019.  It's an excellent way to keep fit, and if you have the required temperament, it's a great experience.  I love it - if you love football, give it a shot!</Text>
-      <ResponsiveImage src={require("../images/referee.jpg")} alt="Soccer referee" />
-  </GridItem>
+      <ResponsiveImage maxW={mediaMaxW} mx="auto" src={require("../images/referee.jpg")} alt="Soccer referee" />
+  </ContentCard>
 );
         
 
