@@ -1,7 +1,7 @@
 import React from "react";
 import {useState, useEffect} from "react";
 import axios from 'axios';
-import { Box, Grid, GridItem, Heading } from "@chakra-ui/react";
+import { Box, SimpleGrid, GridItem, Heading } from "@chakra-ui/react";
 import Card from "./Card";
 import withSingleSection from "./withSingleSection";
 import { SpringIn } from "./SpringIn";
@@ -29,16 +29,12 @@ const ProjectsSectionBox: React.FC = () => {
   if (projectsList == null)
     return <Heading>Loading...</Heading>
 
-  const rows = 2;
-  const cols = Math.ceil(projectsList.length/rows);
-
   return <Box> 
 
-      <Grid
-        h='630px'
-        templateRows={`repeat(${rows}, 1fr)`}
-        templateColumns={`repeat(${cols}, 1fr)`}
-        gap={3}
+      <SimpleGrid
+        columns={{ base: 1, md: 2, xl: 3 }}
+        spacing={{ base: 4, md: 6 }}
+        w="100%"
       >
       {projectsList.map((project) => (
           <GridItem key={project.title}>
@@ -52,7 +48,7 @@ const ProjectsSectionBox: React.FC = () => {
             </SpringIn>
           </GridItem>
         ))}
-      </Grid>
+      </SimpleGrid>
 
   </Box>
 };

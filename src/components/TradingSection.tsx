@@ -1,9 +1,9 @@
-import YouTube from "react-youtube";
 import FullScreenSection from "./FullScreenSection";
 import { Flex, Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image } from "@chakra-ui/react";
 import { StandardGrid } from "./FullScreenSection";
 import { PageProps } from "../pages/MultiSectionPage";
 import { SingleSectionProps } from "./withSingleSection";
+import { ResponsiveYouTube } from "./ResponsiveMedia";
 
 const yt_trading_latency = 'XGyGISmAhik';
 const heading_type = "h3"
@@ -54,22 +54,22 @@ const NetCoreMaturity: React.FC = () => (
 export const TradingSection: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
     return <FullScreenSection {...props} >
       <StandardGrid>
-        <GridItem colSpan={2}>
+        <GridItem colSpan={{ base: 1, lg: 2 }}>
           <Heading as={"h1"} size={"lg"}>Financial Services</Heading>
           <Intro />
         </GridItem>
-        <GridItem rowSpan={2}>
+        <GridItem>
           <TradeManagementApps></TradeManagementApps>
           <Conifer />
         </GridItem>
         <GridItem>
           <Latency />
-          <GridItem>
-            <YouTube videoId={yt_trading_latency} />
-          </GridItem>
+          <ResponsiveYouTube videoId={yt_trading_latency} title="Trade execution latency" />
           <Overheads />
         </GridItem>
-        <NetCoreMaturity />
+        <GridItem>
+          <NetCoreMaturity />
+        </GridItem>
       </StandardGrid>
     </FullScreenSection>
 }

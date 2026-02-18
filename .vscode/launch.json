@@ -9,8 +9,10 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "http://localhost:4321",
-            "webRoot": "${workspaceFolder}"
+            "url": "http://localhost:3000",
+            "webRoot": "${workspaceFolder}",
+            "preLaunchTask": "npm: start",
+            "runtimeArgs": ["--new-window"]
         },
         {
             "name": "SWA: Run personal_portfolio",

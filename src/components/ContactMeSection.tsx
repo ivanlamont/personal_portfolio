@@ -44,11 +44,11 @@ const ContactMeStack: React.FC = () => {
   const isEmailError = (!!formik.errors.email && formik.touched.email)
   const isMessageError = (!!formik.errors.comment && formik.touched.comment)
  
-  return <VStack w="1024px" p={32} alignItems="flex-start">
+  return <VStack w="100%" maxW="48rem" px={{ base: 1, md: 2 }} py={{ base: 2, md: 4 }} alignItems="flex-start">
   <Heading as="h1" id="contactme-section">
     Contact me
   </Heading>
-  <Box p={6} rounded="md" w="100%">
+  <Box p={{ base: 2, md: 6 }} rounded="md" w="100%">
     <form onSubmit={formik.handleSubmit}>
       <VStack spacing={4}>
         <FormControl isRequired isInvalid={isNameError}>
@@ -81,7 +81,7 @@ const ContactMeStack: React.FC = () => {
           <FormLabel htmlFor="comment">Your message</FormLabel>
           <Textarea
             id="comment"
-            height={250}
+            minH={{ base: "180px", md: "250px" }}
             {...formik.getFieldProps("comment")}
           />
           <FormErrorMessage>{formik.errors.comment}</FormErrorMessage>

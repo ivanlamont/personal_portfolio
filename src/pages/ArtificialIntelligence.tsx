@@ -1,23 +1,68 @@
-import { Heading, Grid, GridItem, Link, Text, Image, Box, Flex, VStack } from "@chakra-ui/react";
+import { Box, GridItem, Heading, Link, ListItem, Text, UnorderedList, VStack } from "@chakra-ui/react";
 import withMultisectionPage, { PageProps } from "./MultiSectionPage";
 import FullScreenSection, { StandardGrid } from "../components/FullScreenSection";
 import { SingleSectionProps } from "../components/withSingleSection";
-import { render } from "@testing-library/react";
+import { ResponsiveImage } from "../components/ResponsiveMedia";
+
+type StoryBlockProps = {
+  title?: string;
+  children: React.ReactNode;
+};
+
+const StoryBlock: React.FC<StoryBlockProps> = ({ title, children }) => (
+  <VStack alignItems="stretch" spacing={3}>
+    {title ? (
+      <Heading as="h3" size="md">
+        {title}
+      </Heading>
+    ) : null}
+    <Text fontSize={{ base: "sm", md: "md" }} lineHeight="tall">
+      {children}
+    </Text>
+  </VStack>
+);
 
 const AIContentIntro: React.FC<PageProps & SingleSectionProps> = (props) => {
   return <FullScreenSection {...props} > 
   <StandardGrid>
-    <GridItem colSpan={2}>
+    <GridItem colSpan={{ base: 1, lg: 2 }}>
       <Heading as={"h1"} size={"lg"}>Artificial Intelligence</Heading>
     </GridItem>
     <GridItem>
-      <Text>I have always wished computers were easier to use.  When I was growing up, they were very hard to use, the amount of acquired knowledge required to get started was obscene.  Think CONFIG.SYS and AUTOEXEC.  If you don’t know what I’m talking about – you’re lucky.  I knew how powerful they were, but the learning curve was so steep, it became a barrier to entry for many, many smart people.</Text>
+      <StoryBlock title="Making Computers Easier to Use">
+        I have always wanted computers to be easier for people to use. When I was growing up,
+        the setup and learning curve were severe, and that complexity kept many smart people away
+        from technology despite its potential.
+      </StoryBlock>
     </GridItem>
     <GridItem>
-        <Text>Fast forward to the early 2010s.  I was playing around with text-to-speech and speech recognition engines, bi-directional audio…. I used it to build a basic air-traffic-control simulator.  Then I built a primitive stock-market trader assistant that would place orders in my trading account using voice commands alone.  I saw the potential for making a device that really made computers easier to use, by removing the keyboard and screen entirely, and using human interfaces instead.  The real challenge with the technology I was playing with – that I found I could not solve alone – was getting the system to stop listening when it was speaking back to me.  The speech recognition engines didn’t like having the microphone turned on and off that quickly, and I often ended up with a feedback loop.  I think the solution here was to apply a FFT filter to the input waveform, before passing to the speech recognition engine, to filter out what the machine was already saying (which it already had in wave format).  But that <Link href="https://en.wikipedia.org/wiki/Fast_Fourier_transform"  target="_blank">FFT</Link> library proved too slow for me, and before I knew it, Apple and Amazon had produced Siri and Alexa, and the ingenuity factor began to fade.</Text>        
+      <StoryBlock title="Voice-First Experiments">
+        In the early 2010s I experimented with text-to-speech, speech recognition, and
+        bidirectional audio to build a basic air-traffic-control simulator and a voice-driven
+        trading assistant. The hardest problem was preventing feedback loops while the system was
+        speaking and listening at nearly the same time. I explored filtering strategies using{" "}
+        <Link href="https://en.wikipedia.org/wiki/Fast_Fourier_transform" target="_blank">
+          FFT
+        </Link>
+        , but performance limitations at the time made the solution impractical.
+      </StoryBlock>
     </GridItem>
     <GridItem>
-        <Text>I had really enjoyed the very primitive Artificial Intelligence research that was around at the time I was in college in <Link href="https://www.tcd.ie/" target="_blank">Trinity</Link>.  Basic chat engines, like <Link href="https://en.wikipedia.org/wiki/ELIZA" target="_blank">Eliza</Link>, mostly written in LISP.  Most of us thought that the holy grail in AI research was to write something that could pass a <Link href="https://en.wikipedia.org/wiki/Turing_test">Turing test.</Link></Text>
+      <StoryBlock title="Early AI Foundations">
+        I first got interested in AI during my studies at{" "}
+        <Link href="https://www.tcd.ie/" target="_blank">
+          Trinity
+        </Link>
+        , where we looked at classic chat systems such as{" "}
+        <Link href="https://en.wikipedia.org/wiki/ELIZA" target="_blank">
+          ELIZA
+        </Link>{" "}
+        and the idea of systems that could pass a{" "}
+        <Link href="https://en.wikipedia.org/wiki/Turing_test" target="_blank">
+          Turing test
+        </Link>
+        .
+      </StoryBlock>
     </GridItem>
   </StandardGrid>
 </FullScreenSection>;
@@ -28,13 +73,22 @@ const AIContentNext: React.FC<PageProps & SingleSectionProps> = (props) => {
   return <FullScreenSection {...props} >
   <StandardGrid>
     <GridItem>
-        <Text>Today, my next challenge will be getting my Masters Degree in AI, through the University of Texas at Austin.  </Text>
-        <Image src={require("../images/UT-austin.jpg")} alt="University of Texas at Austin" />
+      <StoryBlock title="Academic Direction">
+        My next major challenge is pursuing a Master&apos;s degree in AI through the University
+        of Texas at Austin.
+      </StoryBlock>
+      <ResponsiveImage src={require("../images/UT-austin.jpg")} alt="University of Texas at Austin" />
     </GridItem>
     <GridItem>
-      <Text>I have been diving into the broad field of AI and machine learning, I recently got certified as a Tensorflow developer.</Text>
-      <Image src={require("../images/tensorflow-cert.png")} alt="Tensorflow Developer Certification" />
-      <Text>The exams for this included building and training models, improving learning rates within neural networks, and so many more technical ideas.</Text>
+      <StoryBlock title="Applied Machine Learning">
+        I have been actively working across modern machine-learning workflows and recently earned
+        TensorFlow developer certification.
+      </StoryBlock>
+      <ResponsiveImage src={require("../images/tensorflow-cert.png")} alt="Tensorflow Developer Certification" />
+      <Text fontSize={{ base: "sm", md: "md" }} lineHeight="tall">
+        Certification work included model design and training, hyperparameter tuning, and neural
+        network optimization techniques.
+      </Text>
     </GridItem>
   </StandardGrid>
 </FullScreenSection>;
@@ -44,21 +98,26 @@ const AIContentNext: React.FC<PageProps & SingleSectionProps> = (props) => {
 const AIContentTrading: React.FC<PageProps & SingleSectionProps> = (props) => {
   return <FullScreenSection {...props} >
   <StandardGrid>
-    <GridItem>
-        <Text>One area that is seeing an explosion in AI use, is of course financial services.  Algorithmic trading is coming to dominate the market.  In my opinion, one of the most important works on the subject today is a book entitled “Machine Learning for Algorithmic Trading” by Stefan Jansen.  This is a beast of a book.   There’s nothing left out.  I’m applying the lessons learnt, and it has changed my perspective on the entire field of ML4T.  Very highly recommended for anyone interested in the subject – if you have the diligence to get through it!</Text>
+    <GridItem colSpan={{ base: 1, lg: 2 }}>
+      <Heading as="h2" size="md">
+        AI in Financial Services
+      </Heading>
+      <Text fontSize={{ base: "sm", md: "md" }} lineHeight="tall" mt={3}>
+        Financial services continues to be one of the fastest-moving AI domains. I have been
+        applying ideas from <i>Machine Learning for Algorithmic Trading</i> by Stefan Jansen, and
+        it has had a major impact on how I approach model design and evaluation in real trading
+        contexts.
+      </Text>
+      <Box mt={3}>
+        <UnorderedList spacing={2} fontSize={{ base: "sm", md: "md" }}>
+          <ListItem>Feature engineering for noisy market data</ListItem>
+          <ListItem>Model validation that minimizes overfitting risk</ListItem>
+          <ListItem>Practical deployment thinking for live systems</ListItem>
+        </UnorderedList>
+      </Box>
     </GridItem>
-    <Image src={require("../images/ML4T-book.jpg")} alt="Machine Learning for Algorithmic Trading" />
     <GridItem>
-        <Text></Text>
-    </GridItem>
-    <GridItem>
-        <Text></Text>
-    </GridItem>
-    <GridItem>
-        <Text></Text>
-    </GridItem>
-    <GridItem>
-        <Text></Text>
+      <ResponsiveImage src={require("../images/ML4T-book.jpg")} alt="Machine Learning for Algorithmic Trading" />
     </GridItem>
   </StandardGrid>
 </FullScreenSection>;
@@ -67,18 +126,11 @@ const AIContentTrading: React.FC<PageProps & SingleSectionProps> = (props) => {
 
 const AIContent: React.FC<PageProps> = (props) => {
 
-  return <VStack>
+  return <VStack w="100%" spacing={{ base: 8, md: 10 }}>
     <AIContentIntro  {...props} colorIndex={1}/>
     <AIContentNext  {...props} colorIndex={2}/>
     <AIContentTrading  {...props} colorIndex={3} />
   </VStack>    
-
-
-  // return <Flex p={18} width={'1fr'} alignContent={'center'}>
-  //   <AIContentIntro colorIndex={1} {...props}/>
-  //   <AIContentNext colorIndex={2} {...props}/>
-  //   <AIContentTrading colorIndex={3} {...props}/>
-  // </Flex>    
 }
 
 const ArtificialIntelligence = withMultisectionPage(AIContent);

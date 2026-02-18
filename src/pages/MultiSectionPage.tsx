@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Alert from "../components/Alert";
 import { ColorThemeContext } from "../context/colorContext";
+import appTheme from "../theme";
 
 export interface PageProps {
     colorSet: string[]
@@ -21,7 +22,7 @@ export default function withMultisectionPage<P>(Component: React.ComponentType<P
         };
         
         return (
-                <ChakraProvider >
+                <ChakraProvider theme={appTheme}>
                     <AlertProvider>
                         <main>
                             <Header/>

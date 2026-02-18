@@ -1,8 +1,8 @@
-import YouTube from "react-youtube";
 import FullScreenSection, { StandardGrid } from "./FullScreenSection";
 import { Flex, Center, Square, Box, Heading, VStack, Text, Grid, GridItem, Image } from "@chakra-ui/react";
 import { PageProps } from "../pages/MultiSectionPage";
 import { SingleSectionProps } from "./withSingleSection";
+import { ResponsiveYouTube } from "./ResponsiveMedia";
 
 const yt_prime_brokerage_ops = 'bSDkoWqCGL8';
 const heading_type = "h3"
@@ -90,12 +90,12 @@ const Compliance: React.FC = () => (
 export const PrimeBrokerageTopSection: React.FC<PageProps | SingleSectionProps> = (props: PageProps | SingleSectionProps) => {
   return <FullScreenSection {...props} >
     <StandardGrid>
-      <GridItem  colSpan={2}>    
+      <GridItem colSpan={{ base: 1, lg: 2 }}>
         <Intro />
       </GridItem>
       <PrimeBrokerage />
       <GridItem>
-        <YouTube videoId={yt_prime_brokerage_ops} />
+        <ResponsiveYouTube videoId={yt_prime_brokerage_ops} title="Prime brokerage operations" />
       </GridItem>
     </StandardGrid>  
   </FullScreenSection>

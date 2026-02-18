@@ -16,21 +16,21 @@ const Card = (cardInfo: CardType) => {
       whileHover={{ scale: 1.05 }}
       transition={{ type: 'spring', stiffness: 30 }}
     >
-      <Box maxW='sm' borderRadius='lg' overflow='hidden' bg='white' boxShadow='dark lg'>
+      <Box w="100%" borderRadius='lg' overflow='hidden' bg='white' boxShadow='dark lg'>
         <Link href={cardInfo.target} _hover={{ textDecoration: "none" }} >
-          <VStack w="100%" maxHeight="390px" display='flex' alignItems={'start'} justifyContent='space-between'>
-            <Box w="100%" minHeight={"190px"} alignItems='center' justifyContent='space-between'>
+          <VStack w="100%" minH={{ base: "320px", md: "360px" }} display='flex' alignItems={'start'} justifyContent='space-between'>
+            <Box w="100%" minH={{ base: "170px", md: "190px" }} alignItems='center' justifyContent='space-between'>
               <Image
                 src={cardInfo.imageSrc}
                 w="100%"
-                maxHeight={"210px"}
+                h={{ base: "170px", md: "210px" }}
                 objectFit='cover'
                 borderRadius='lg'
                 alt={cardInfo.title}
                 boxShadow="inset 0 0 0 5px rgba(0,0,0,0.12)"
               />
             </Box>
-            <VStack display='flex' p='3' minHeight="150" alignItems='start'>
+            <VStack display='flex' p='3' minH="150px" alignItems='start'>
               <Box display='flex' alignItems='start'>
               <Text as='b' fontSize='xl' color='black'>{cardInfo.title}</Text>
               </Box>

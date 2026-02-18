@@ -3,6 +3,7 @@ import { Flex, VStack, Box } from "@chakra-ui/react";
 import { PageProps } from "../pages/MultiSectionPage";
 import { getTextColor } from "./FullScreenSection";
 import chroma from "chroma-js";
+import { layoutTokens } from "../theme";
 
 export interface SingleSectionProps {
   colorIndex: number,
@@ -26,14 +27,25 @@ export default function withSingleSection<P>(WrappedComponent: React.ComponentTy
       const topOpaque = chroma(topColor).alpha(0.9).hex()
       const bottomOpaque = chroma(bottomColor).alpha(0.9).hex()
       const colorGradient = 'linear(to-b, ' + topOpaque + ', ' + bottomOpaque + ')';
-      return <Box bgSize={"cover"} bgRepeat={"no-repeat"} bgImage={props.fadedBackground} >
+      return <Box bgSize={"cover"} bgRepeat={"no-repeat"} bgImage={props.fadedBackground}>
         <Flex         
-          minWidth="99vw" height="100vh" minHeight="100vh" 
+          w="100%"
+          minH="100svh"
           justifyContent="center" 
           bgGradient={colorGradient}        
           color={color}        
+        >
+          <VStack
+            w="100%"
+            maxW={layoutTokens.sectionMaxW}
+            minH="100svh"
+            alignItems="stretch"
+            justifyContent="flex-start"
+            px={layoutTokens.sectionPaddingX}
+            pt={layoutTokens.sectionPaddingTop}
+            pb={layoutTokens.sectionPaddingBottom}
+            spacing={{ base: 6, md: 8 }}
           >
-          <VStack height="100vh" width="75vw" justifyContent="center" overflow="hidden"  {...props}>
             <WrappedComponent {...props} />
           </VStack>        
         </Flex>
